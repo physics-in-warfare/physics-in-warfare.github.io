@@ -337,7 +337,32 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
   </p>
   <h3>Communication Systems</h3>
   <p>
-    Military drones use radio-frequency (RF) electromagnetic waves to communicate with other drones, satellites and on-the-ground operators. This means they transmit information. The types of information include control commands, for example, direction and speed; sensor data, for example, video and radar; and status details, for example, battery and potential damage. These commands use microwave EM radiation in the GHz frequency range. 
+    Military drones use radio-frequency (RF) electromagnetic waves to communicate with other drones, satellites and on-the-ground operators. This means they transmit information. The types of information include control commands (direction and speed), sensor data (video and radar), and status details (battery and potential damage). These commands use microwave EM radiation in the GHz frequency range. 
+  </p>
+  <p>
+    RF communication uses electromagnetic wave propagation (at speed of light). It uses wave modulation to carry certain signals 
+  </p>
+  <p>
+    Amplitude Modulation (AM): Frequency and phase remain constant - only amplitude (strength of wave) changes. Stronger signal = larger oscillation peaks and weaker signal = smaller oscillation peaks. The variations of strength are what conveys the message. However AM is rarely used in a military setting because it is affected significantly by noise. The electric field for this signal is given by
+  $$
+    E(t) = [A + m(t)]sin(2 \pi f t)
+    $$
+    where $t$ is the time, $A$ is the amplitude, $m$ is the information signal, and $f$ is the frequency [15].
+  </p>
+  <p>
+    Frequency Modulation (FM): Only frequency is varied (around a central value) - this changes the phase indirectly, but all else is kept constant. Information is encoded as small shifts in the frequency. FM is far more reliable in a military setting than AM as it is not affected much by noise. It is mostly used for radio control and voice messages. The frequency shift is what encodes the information. The electric field for FM is given by
+$$
+    E(t) = Asin(2 \pi [f + \Delta f(t)]t)
+    $$
+    where $\Delta f(t)$$ is the frequenct shift [16].
+  </p>
+   <p>
+     Phase Modulation (PM): Amplitude and frequency stay constant, while phase is shifted either forwards or backwards. The instantaneous amplitude of the base signal modifies the phase of the carrier signal keeping amplitude and frequency constant. This delivers the message in phase shifts. PM is good because it is resistant  to noise and is very efficient. It is mostly used for digital messages and encrypted links. The phase shift is what encodes the information. The electric field for this is given by
+     $$
+     E(t) = Asin(2 \pi ft + \phi (t))
+     $$
+     where $\phi (t)$$ is the phase shift [17].
+   </p>
   </p>
   </div>
 
@@ -404,6 +429,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
 
 
 </html> 
+
 
 
 
