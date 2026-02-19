@@ -311,32 +311,44 @@ Drag: The force opposing motion through a fluid (air, in the case of drones). Th
   where $C_D$ is the drag coefficient [8]. The types of drag include parasitic drag (from the body, wings, weapons etc of the drone), induced drag (caused by generating lift), and skin friction (due to the viscosity of the air). The reduction of drag is important in drones because it increases two-fold with speed and external weaponry can significantly increase it. Drag can be decreased by using streamlined designs, increasing the efficiency and flight time. 
     </p>
 
+<!-- ===== INTERACTIVE MQ-9 SECTION ===== -->
+
 <div class="interactive-box">
-  <h3>Interactive Drone Lift & Drag Calculator</h3>
-  <p>Change the flight conditions and calculate lift and drag.</p>
+<h3>MQ-9 Reaper Flight Conditions Simulator</h3>
 
-  <label>Air Density ρ (kg/m³)</label>
-  <input id="rho" type="number" step="0.01" value="1.225">
+<p>
+This simulator models how <b>lift</b> and <b>drag</b> change for the MQ-9 Reaper drone
+when operating conditions change. The aircraft parameters are fixed using
+engineering estimates.
+</p>
 
-  <label>Velocity v (m/s)</label>
-  <input id="velocity" type="number" step="0.1" value="20">
+<p><b>MQ-9 Reaper parameters (estimated):</b></p>
+<ul>
+<li>Wing Area S = 26 m²</li>
+<li>Lift Coefficient C<sub>L</sub> = 0.6 (cruise)</li>
+<li>Drag Coefficient C<sub>D</sub> = 0.04 (cruise)</li>
+</ul>
 
-  <label>Wing Area S (m²)</label>
-  <input id="area" type="number" step="0.1" value="0.5">
+<p>
+Change velocity or air density to simulate different flight speeds or altitudes.
+Lower air density represents high-altitude flight.
+</p>
 
-  <label>Lift Coefficient C<sub>L</sub></label>
-  <input id="cl" type="number" step="0.01" value="1.0">
+<label>Velocity v (m/s)</label>
+<input id="velocity" type="number" step="1" value="80">
 
-  <label>Drag Coefficient C<sub>D</sub></label>
-  <input id="cd" type="number" step="0.01" value="0.04">
+<label>Air Density ρ (kg/m³)</label>
+<input id="rho" type="number" step="0.01" value="1.225">
 
-  <button onclick="calculateForces()">Calculate</button>
+<button onclick="calculateMQ9Forces()">Calculate Forces</button>
 
-  <div class="result">
-    Lift: <span id="liftResult">0</span> N<br>
-    Drag: <span id="dragResult">0</span> N
-  </div>
+<div class="result">
+Lift: <span id="liftResult">0</span> N<br>
+Drag: <span id="dragResult">0</span> N
 </div>
+
+</div>
+
 
 
   
@@ -437,7 +449,7 @@ $$
   <p>
     Line of sight Limitations: Radio waves travel in straight lines and therefore do not bend around the curvature of the Earth's surface, nor obstacles. The horizon limitation is approximately calculated using the equation below. This means that low-flying drones are affected, as are ones used in urban settings, as they lose connection easily. The approximation for the horizon limit is given by
     $$
-    d ~ \sqrt{2Rh}
+    d \approx \sqrt{2Rh}
     $$
     where $R$ is the radius of the Earth and $h$ is the height of the drone [16].
   </p>
@@ -526,21 +538,29 @@ $$
 
 </footer> 
 
-  <script>
-function calculateForces() {
-  const rho = parseFloat(document.getElementById("rho").value);
-  const v = parseFloat(document.getElementById("velocity").value);
-  const S = parseFloat(document.getElementById("area").value);
-  const CL = parseFloat(document.getElementById("cl").value);
-  const CD = parseFloat(document.getElementById("cd").value);
+<script>
 
+function calculateMQ9Forces() {
+
+  // MQ-9 Reaper fixed parameters (engineering estimates)
+  const S = 26;        // Wing area (m²)
+  const CL = 0.6;      // Lift coefficient (cruise)
+  const CD = 0.04;     // Drag coefficient (cruise)
+
+  // User inputs
+  const v = parseFloat(document.getElementById("velocity").value);
+  const rho = parseFloat(document.getElementById("rho").value);
+
+  // Lift and drag equations
   const lift = 0.5 * rho * v * v * CL * S;
   const drag = 0.5 * rho * v * v * CD * S;
 
   document.getElementById("liftResult").textContent = lift.toFixed(2);
   document.getElementById("dragResult").textContent = drag.toFixed(2);
 }
+
 </script>
+
 
  
 
@@ -548,27 +568,3 @@ function calculateForces() {
 
 
 </html> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
