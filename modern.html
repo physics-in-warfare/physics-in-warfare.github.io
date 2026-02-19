@@ -26,6 +26,32 @@ window.MathJax = {
 
   <style> 
 
+.laser-box {
+  background: #020617;
+  border: 1px solid #38bdf8;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+canvas {
+  background: black;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.laser-box input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  background: #0a0f1f;
+  border: 1px solid #1e293b;
+  color: white;
+  border-radius: 8px;
+}
+
+    
     body { 
 
       margin: 0; 
@@ -533,6 +559,32 @@ The next part is stimulated emission, where the emitted photons with energy hf p
           <br>
           Line of sight restrictions are where lasers cannot go through walls or over hills, so they are limited to direct scenarios. 
         </p>
+        <div class="laser-box">
+
+<h3>Laser Beam Divergence Simulator</h3>
+
+<p>
+This simulation shows how a laser beam spreads due to diffraction using the beam divergence equation.
+</p>
+
+<p>
+Change the wavelength or beam waist to see how the beam spreads.
+</p>
+
+<label>Wavelength λ (nm)</label>
+<input id="wavelength" type="number" value="500">
+
+<label>Initial Beam Waist ω₀ (mm)</label>
+<input id="waist" type="number" value="2">
+
+<canvas id="laserCanvas" width="600" height="300"></canvas>
+
+<p class="result">
+Divergence angle θ = <span id="thetaValue">0</span> rad
+</p>
+
+</div>
+
     <h3>High-Power Microwave DEWs</h3>
     <p>
       High-power microwave weapons emit intense electromagnetic pulses that disrupt or
@@ -599,6 +651,67 @@ function calculateMQ9Forces() {
 
 </script>
 
+<script>
+
+const canvas = document.getElementById("laserCanvas");
+const ctx = canvas.getContext("2d");
+
+const wavelengthInput = document.getElementById("wavelength");
+const waistInput = document.getElementById("waist");
+const thetaDisplay = document.getElementById("thetaValue");
+
+function drawLaser() {
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Convert units
+  const lambda = parseFloat(wavelengthInput.value) * 1e-9; // nm → m
+  const w0 = parseFloat(waistInput.value) * 1e-3; // mm → m
+
+  if (!lambda || !w0) return;
+
+  // Beam divergence equation
+  const theta = lambda / (Math.PI * w0);
+  thetaDisplay.textContent = theta.toExponential(3);
+
+  const startX = 50;
+  const centerY = canvas.height / 2;
+
+  ctx.strokeStyle = "#ff0000";
+  ctx.lineWidth = 2;
+
+  ctx.beginPath();
+
+  // Draw beam edges
+  for (let x = 0; x < 500; x += 5) {
+
+    const distance = x / 100; // scaled distance
+    const spread = theta * distance * 5000; // visual scaling
+
+    ctx.moveTo(startX + x, centerY - spread);
+    ctx.lineTo(startX + x + 5, centerY - spread);
+
+    ctx.moveTo(startX + x, centerY + spread);
+    ctx.lineTo(startX + x + 5, centerY + spread);
+  }
+
+  ctx.stroke();
+
+  // Draw source
+  ctx.fillStyle = "#38bdf8";
+  ctx.beginPath();
+  ctx.arc(startX, centerY, 6, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+// Update automatically when inputs change
+wavelengthInput.addEventListener("input", drawLaser);
+waistInput.addEventListener("input", drawLaser);
+
+// Initial draw
+drawLaser();
+
+</script>
 
  
 
@@ -606,6 +719,7 @@ function calculateMQ9Forces() {
 
 
 </html> 
+
 
 
 
