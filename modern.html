@@ -555,7 +555,7 @@ The next part is stimulated emission, where the emitted photons with energy hf p
           $$
           \theta = \frac{\lambda}{\pi \omega_0}
           $$
-          where $\lambda$ is the wavelength and $\omega_0$ is the radius of the beam at its narrowest point [28].
+          where $\lambda$ is the wavelength and $\omega_0$ is the initial beam radius [28].
           <br>
           Line of sight restrictions are where lasers cannot go through walls or over hills, so they are limited to direct scenarios. 
         </p>
@@ -568,13 +568,13 @@ This simulation shows how a laser beam spreads due to diffraction using the beam
 </p>
 
 <p>
-Change the wavelength or beam waist to see how the beam spreads.
+Change the wavelength or initial beam radius to see how the beam spreads.
 </p>
 
 <label>Wavelength λ (nm)</label>
 <input id="wavelength" type="number" value="500">
 
-<label>Initial Beam Waist ω₀ (mm)</label>
+<label>Initial Beam Radius ω₀ (mm)</label>
 <input id="waist" type="number" value="2">
 
 <canvas id="laserCanvas" width="600" height="300"></canvas>
@@ -719,6 +719,7 @@ drawLaser();
 
 
 </html> 
+
 
 
 
