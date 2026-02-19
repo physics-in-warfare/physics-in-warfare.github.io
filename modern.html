@@ -363,6 +363,34 @@ $$
      $$
      where $\phi (t)$ is the phase shift [17].
    </p>
+  <p>
+    There are numerous downsides to RF communication, however.  These include
+  </p>
+  <p>
+    Line of sight Limitations: Radio waves travel in straight lines and therefore do not bend around the curvature of the Earth's surface, nor obstacles. The horizon limitation is approximately calculated using the equation below. This means that low-flying drones are affected, as are ones used in urban settings, as they lose connection easily. The approximation for the horizon limit is given by
+    $$
+    d ~ \sqrt{2Rh}
+    $$
+    where $R$ is the radius of the Earth and $h$ is the height of the drone [16].
+  </p>
+  <p>
+    Loss of signal strength: Radio waves spread out according to the inverse square law as they travel. This means that increasing distance greatly decreases power, making long-range drone control difficult. This power loss is described by
+    $$
+    P \propto \frac{1}{r^2}
+    $$
+    where $r$ is the distance from the signal transmitter [17].
+  </p>
+  <p>
+    Interference: When multiple signals overlap, they superpose which can distort the signal, or completely eliminate it (destructive interference). 
+  </p>
+  <p>
+    Jamming: The deliberate transmission of RF noise at the same frequency of that being used to communicate with the drone. This overwhelms the original signal due to the waves superposing and the drone can no longer make out the commands or messages. 
+
+  </p>
+  <p>
+    Signal spoofing: This is where fake signals that look like the real ones are sent to the drone, for example, fake GPS locations or fake attack commands that are meant to disrupt tactics. 
+
+  </p>
   </p>
   </div>
 
@@ -429,6 +457,7 @@ $$
 
 
 </html> 
+
 
 
 
