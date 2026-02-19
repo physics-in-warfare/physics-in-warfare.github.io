@@ -309,7 +309,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     n_1 sin\theta_1 = n_2 sin\theta_2
     $$
-    where $n_1$ and $n_2$ are the refractive indices of the intial and final media respectively, and $\theta_1$ and $\theta_2$ are the angles of incidence and refraction respectively [12].
+    where $n_1$ and $n_2$ are the refractive indices of the initial and final media respectively, and $\theta_1$ and $\theta_2$ are the angles of incidence and refraction respectively [12].
  <br>
     This, now focussed, image is detected by a sensor which uses the photoelectric effect to emit electrons and the intensity of the electrons is governed by the intensity of the light. More electrons generate a stronger signal, which can be used to determine how close an object is. However, optical cameras do have limited use due to poor performance in darkness, smoke or dust. So they are not often sufficient alone for combat. 
   </p>
@@ -323,8 +323,17 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     Hotter objects emit more radiation. The imaging cameras detect the radiation and focus it onto a sensor array, which converts the information into an electrical signal which can be interpreted as a colourful image, with different colours showing different temperatures. Therefore, thermal imaging sensors are very useful in warfare because they can detect anything that emits heat, including humans, vehicles that are running, and weapons that have recently been or are being fired. They can be detected even at night and in poor visibility. However, thermal imaging does have limitations, including lower heat contrasts in hotter settings, decreased effectiveness in heavy rain, or if objects are thermally shielded (temperature minimized through heat transfer by insulation or reflection). 
   </p>
   <p>
-    Radar (Radio Detection and Ranging): This measures speed, distance and shape of objects using radiowave and microwave radiation (wavelength range: 1mm to 1m). Radar emits an electromagnetic pulse (short, intense burst). This pulse reflects off of an object and its echo returns to a detector. Distance is calculated by multiplying the time between the signal being sent out and its echo being detected with the speed of EM waves, and then dividing it by 2. If the target is moving, the Doppler Effect must be used. This is given by
-    
+    Radar (Radio Detection and Ranging): This measures speed, distance and shape of objects using radiowave and microwave radiation (wavelength range: 1mm to 1m). Radar emits an electromagnetic pulse (short, intense burst). This pulse reflects off of an object and its echo returns to a detector. Distance is calculated by multiplying the time between the signal being sent out and its echo being detected with the speed of EM waves, and then dividing it by 2. If the target is moving, the Doppler Effect must be used. The observed frequency from the Doppler Effect is given by
+    $$
+    f_0 = f_s \frac{v \pm v_0}{v \mp v_s}
+    $$
+    where $f_s$ is the source frequency, $v$ is the sound wave velocity, $v_0$ is the observer velocity, and $v_s$ is the source velocity [14].
+    <br>
+    This is useful in a military setting because it works in all weather conditions and light conditions and is really good for measuring the distance of objects that are far away. Radar's limitations included high power usage and ineffectiveness against stealth technology - vehicles and weapons can be designed using certain shapes and angles that deflect the waves in the wrong direction, or they are coated with materials that absorb the waves rather than reflect them. 
+
+  </p>
+  <p>
+    Lidar (Light Detection and Ranging): This is a very similar concept to Radar but uses laser pulses (infrared/visible light) rather than radiowave or microwave pulses. The background physics is also similar to that of Radar (pulses sent out, return time measured and distance calculated). However, Lidar is used more to make detailed, high resolution 3D maps, rather than work out the distance to objects. Military uses include terrain mapping, avoiding certain obstacles and urban reconnaissance. However, its limitations are that it is less effective in rain, fog, smoke and dust (due to these things blocking the light signals being blocked) and, because it is an active sensor (constantly sending out signals), it is more easily detected by the enemy than passive sensors. 
   </p>
   </div>
 
@@ -391,6 +400,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
 
 
 </html> 
+
 
 
 
