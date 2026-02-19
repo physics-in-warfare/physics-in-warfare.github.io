@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naval Warfare | Physics in Warfare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0a0f1f, #121a33);
+      color: #e6ecff;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #7dd3fc;
+    }
+
+    section {
+      padding: 60px 12%;
+    }
+
+    nav {
+      background: rgba(10,15,31,0.95);
+      padding: 15px 12%;
+      border-bottom: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .content-block {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px rgba(56,189,248,0.1);
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #c7d2fe;
+      margin-bottom: 20px;
+    }
+
+    .equation {
+      background: #020617;
+      border-left: 4px solid #38bdf8;
+      padding: 15px 20px;
+      margin: 20px 0;
+      font-family: monospace;
+      color: #e0f2fe;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    footer {
+      background: #020617;
+      padding: 25px;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 40px 6%;
+      }
+    }
+  
+
+    /* Sail model styles */
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    .slider-group {
+      background: #020617;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+    }
+
+    .slider-group label {
+      display: block;
+      color: #c7d2fe;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .slider-value {
+      float: right;
+      color: #e6ecff;
+      font-weight: 600;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: #1e293b;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <h2>Physics in Warfare</h2>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
+<section>
+
+  <h1>From Sail to Steam: The Physics Driving Warship Propulsion</h1>
+
+  
+
+  <div class="content-block">
+    <h2>Introduction</h2>
+    <p>
+      Naval ships before the mid-19th century relied on wind and sails for propulsion.
+      Physical principles—chiefly forces, fluid dynamics, and energy conversion—governed
+      how these vessels moved. As technology progressed, nations developed steam engines,
+      steel hulls, and screw propellers, transforming naval warfare and giving rise to new
+      ship types such as the ironclad and later the dreadnought class.
+    </p>
+  </div>
+
+  <div class="content-block">
+    <h2>1. The Physics of Sail Propulsion (c.1500–1850)</h2>
+
+    <h3>Forces on a Sail</h3>
+    <p>
+      In the Age of Sail, the interaction between airflow and sails produced motion. A sail
+      acts like an airfoil: wind moving over its surface creates pressure differences.
+      According to Bernoulli's principle, airflow on one side of the sail results in a lower
+      pressure. This pressure difference creates a net force that can be resolved into a
+      component driving forward movement.
+    </p>
+
+    <p>
+      The resultant force <em>F</em> on a sail depends on the lift coefficient and the dynamic
+      pressure of the wind:
+    </p>
+
+    <div class="equation"><strong>Equation:</strong> F = ½ρ_air A V² C_L</div>
+
+    <p><strong>Explanation:</strong> This lift equation shows that the aerodynamic force on a sail increases with air density (ρ_air), sail area (A), and the square of wind speed (V²) ([1, 2]) (ρ<sub>air</sub>), sail area (A), and the square of wind speed (V²). The lift coefficient C<sub>L</sub> depends on sail shape and angle.</p>
+
+    <p>where:</p>
+    <ul>
+      <li><strong>T</strong> is the thrust produced by the propeller (N)</li>
+      <li><strong>ρ_water</strong> is water density (~1025 kg/m³ for seawater)</li>
+      <li><strong>A_p</strong> is propeller disk area (m²)</li>
+      <li><strong>D</strong> is propeller diameter (m)</li>
+      <li><strong>ω</strong> is angular velocity (rad/s)</li>
+    </ul>
+
+    <p>
+      This relationship derives from Bernoulli's principle and fluid dynamics, demonstrating
+      that force scales with the square of wind speed—doubling wind speed quadruples the
+      force.
+    </p>
+
+    <figure style="margin:30px 0; text-align:center;">
+      <img src="Untitled picture2.png" alt="J.M.W. Turner The Battle of Trafalgar 1822 naval battle painting" style="max-width:60%; border-radius:10px;">
+      <figcaption style="font-size:0.9rem; color:#c7d2fe;"><strong>Figure:</strong> J.M.W. Turner, <em>The Battle of Trafalgar</em> (1822–24). National Maritime Museum, Royal Museums Greenwich. Source: https://www.rmg.co.uk/collections/objects/rmgc-object-12057</figcaption>
+    </figure>
+
+    <h3>Interactive Sail Vector Model</h3>
+
+    <p>
+      This simplified model shows how wind force is resolved into lift and forward motion.
+      Adjust the sail angle to see how force vectors change.
+    </p>
+
+    <div style="margin:30px 0; background:#020617; border:1px solid #1e293b; border-radius:12px; padding:20px; text-align:center;">
+      <svg id="vectorSVG" width="100%" height="400" viewBox="0 0 600 400">
+        <!-- Boat -->
+        <rect x="290" y="150" width="20" height="100" fill="#666" />
+
+        <!-- Sail -->
+        <line id="sailLine" x1="300" y1="200" x2="360" y2="140" stroke="#ddd" stroke-width="4" />
+
+        <!-- Wind -->
+        <line x1="50" y1="200" x2="200" y2="200" stroke="#999" stroke-width="3" marker-end="url(#arrow)" />
+        <text x="60" y="185" fill="#aaa" font-size="12">Wind</text>
+
+        <!-- Force on Sail -->
+        <line id="liftVec" x1="300" y1="200" x2="260" y2="140" stroke="#E67E22" stroke-width="4" marker-end="url(#arrow)" />
+        <text x="210" y="135" fill="#E67E22" font-size="12">Lift</text>
+
+        <!-- Forward Force -->
+        <line id="forwardVec" x1="300" y1="200" x2="380" y2="200" stroke="#27AE60" stroke-width="4" marker-end="url(#arrow)" />
+        <text x="390" y="205" fill="#27AE60" font-size="12">Forward</text>
+
+        <!-- Arrow Marker -->
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+          </marker>
+        </defs>
+      </svg>
+
+      <div style="margin-top:15px;">
+        <label>Sail Angle: <span id="angleVal">25</span>°</label><br>
+        <input type="range" id="angleSlider" min="5" max="60" value="25" step="1" style="width:60%;">
+      </div>
+    </div>
+
+    <script>
+      const slider = document.getElementById("angleSlider");
+      const sail = document.getElementById("sailLine");
+      const lift = document.getElementById("liftVec");
+      const forward = document.getElementById("forwardVec");
+      const angleText = document.getElementById("angleVal");
+
+      function updateVectors() {
+        const angle = slider.value;
+        angleText.textContent = angle;
+
+        const rad = angle * Math.PI / 180;
+
+        // Sail direction
+        const sx = 300 + 70 * Math.cos(-rad);
+        const sy = 200 - 70 * Math.sin(-rad);
+        sail.setAttribute("x2", sx);
+        sail.setAttribute("y2", sy);
+
+        // Lift (perpendicular)
+        const lx = 300 - 60 * Math.sin(rad);
+        const ly = 200 - 60 * Math.cos(rad);
+        lift.setAttribute("x2", lx);
+        lift.setAttribute("y2", ly);
+
+        // Forward (projection)
+        const fx = 300 + 70 * Math.cos(rad) * 0.8;
+        forward.setAttribute("x2", fx);
+      }
+
+      slider.addEventListener("input", updateVectors);
+      updateVectors();
+    </script>
+
+    <h3>Tacking and Force Vectors</h3>
+    <p>
+      Ships couldn't travel directly upwind. Instead, they used tacking, adjusting sail
+      angles so that the force vector from the wind had a forward component, forcing the
+      vessel to follow a zigzag path to advance upwind.
+    </p>
+
+    <p>
+      The key physics involves vector decomposition: the aerodynamic force on the sail can
+      be resolved into lift (perpendicular to wind direction) and drag (parallel to wind).
+      By angling the sail appropriately, a component of lift points forward, while the keel
+      prevents sideways drift.
+    </p>
+
+    <p>
+      This meant strategic movement and battles were heavily influenced by wind and sea
+      conditions, setting the stage for the search for reliable, powered propulsion.
+    </p>
+  </div>
+
+    <ul>
+      <li>ρ_air ≈ 1.225 kg/m³</li>
+      <li>A = sail area</li>
+      <li>V = wind speed</li>
+      <li>C_L = lift coefficient</li>
+    </ul>
+
+    <h3>Tacking and Force Vectors</h3>
+    <p>
+      By decomposing aerodynamic forces into lift and drag, ships could tack upwind
+      while keels prevented sideways drift.
+    </p>
+  </div>
+
+  <div class="content-block">
+    <h2>2. Steam Power and the Rise of Steel Warships (c.1830–1900)</h2>
+
+    <h3>Thermal to Mechanical Energy</h3>
+    <p>
+      The development of the steam engine (initially developed by Thomas Savery in 1698,
+      but only later implemented on a practical maritime scale by engineers like James Watt)
+      changed everything. By converting heat from burning fuel into mechanical work, ships
+      gained independent propulsion.
+    </p>
+
+    <p>
+      The energy conversion chain follows:<br>
+      <strong>Chemical energy (fuel) → Thermal energy (steam) → Mechanical work (shaft rotation)</strong>
+    </p>
+
+    <p>
+      The theoretical efficiency of a steam engine is governed by the Carnot cycle, where
+      maximum efficiency η depends on the temperature difference between hot and cold
+      reservoirs:
+    </p>
+
+    <div class="equation"><strong>Equation:</strong> η = 1 - (T_cold / T_hot)</div>
+
+    <p><strong>Explanation:</strong> This Carnot efficiency equation gives the theoretical maximum efficiency of a heat engine ([4]), where T<sub>hot</sub> and T<sub>cold</sub> are the absolute temperatures of the hot and cold reservoirs.</p>
+
+    <p>
+      Real steam engines achieved efficiencies of 5–15% in early designs, improving to
+      20–25% as turbines replaced reciprocating engines.
+    </p>
+
+    <h3>Propellers and Thrust</h3>
+    <p>
+      Propellers generate thrust by accelerating water backward, producing forward motion
+      by Newton's third law. A simplified relation for thrust <em>T</em> is:
+    </p>
+
+    <div class="equation"><strong>Equation:</strong> T ∝ ρ_water A_p D⁴ ω²</div>
+
+    <p><strong>Explanation:</strong> Thrust T depends on water density ([5, 6]) (ρ<sub>water</sub>), propeller area (A<sub>p</sub>), diameter (D), and angular speed (ω). Larger and faster-spinning propellers generate greater thrust.</p>
+
+    <p>where:</p>
+    <ul>
+      <li><strong>A_p</strong> is propeller disk area</li>
+      <li><strong>D</strong> is propeller diameter</li>
+      <li><strong>ω</strong> is angular velocity (rad/s)</li>
+      <li><strong>ρ_water</strong> is water density (~1025 kg/m³ for seawater)</li>
+    </ul>
+
+    <p>
+      To maintain high speeds, ships must overcome hydrodynamic drag <em>D</em>:
+    </p>
+
+    <div class="equation"><strong>Equation:</strong> D = ½ ρ_water C_D S v²</div>
+
+    <p><strong>Explanation:</strong> This drag equation shows that resistance increases with water density, hull area (S), drag coefficient (C<sub>D</sub>), and especially with the square of speed v.</p>
+
+    <p>
+      where <strong>C_D</strong> is the drag coefficient and <strong>S</strong> is the wetted
+      surface area.
+    </p>
+
+    <p>
+      The power <em>P</em> required to maintain speed increases approximately with the cube
+      of velocity:
+    </p>
+
+    <div class="equation"><strong>Equation:</strong> P ∝ v³</div>
+
+    <p><strong>Explanation:</strong> Required engine power rises with the cube of velocity ([7]), meaning small increases in speed require much larger increases in power.</p>
+
+    <p>
+      This cubic relationship meant that achieving even small increases in top speed
+      demanded dramatically larger increases in engine power—a persistent engineering
+      challenge that drove naval architecture throughout the steam age.
+    </p>
+  </div>
+
+    <h3>Propellers and Thrust</h3>
+
+    <div class="equation"><strong>Equation:</strong> 
+      D = ½ ρ_water C_D S v²
+    </div>
+
+    <div class="equation"><strong>Equation:</strong> 
+      P ∝ v³
+    </div>
+  </div>
+
+  <div class="content-block">
+    <h2>3. HMS Dreadnought and the Naval Arms Race</h2>
+
+    <h3>Revolutionary Design</h3>
+    <p>
+      When HMS <em>Dreadnought</em> launched in 1906, it combined major physics-based
+      innovations that transformed battleship design.
+    </p>
+
+    <ul>
+      <li>
+        <strong>Steam turbines</strong> instead of older reciprocating engines, providing
+        higher power density and smoother operation. Parsons' turbines achieved rotational
+        speeds of 1000+ RPM, far exceeding typical 80–100 RPM engines.
+      </li>
+      <li>
+        <strong>All-big-gun armament</strong>—ten 12-inch (305 mm) guns—simplified fire
+        control and maximised broadside kinetic energy. Each shell had a muzzle velocity of
+        approximately 870 m/s, delivering about 50 MJ per round.
+      </li>
+      <li>
+        <strong>Speed of 21 knots</strong> (39 km/h), faster than most preceding battleships,
+        which typically managed around 18 knots.
+      </li>
+    </ul>
+
+    <p>
+      The power-versus-speed relationship explains why this was revolutionary: turbines
+      provided approximately 23,000 shaft horsepower (17 MW) without massively increasing
+      displacement, allowing <em>Dreadnought</em> to cruise and fight at speeds earlier
+      battleships could not sustain.
+    </p>
+
+    <div class="equation"><strong>Equation:</strong> KE = ½mv²</div>
+    <p><strong>Variables:</strong> m = shell mass (kg); v = muzzle velocity (m/s).</p>
+    <p><strong>Explanation:</strong> This kinetic energy equation shows that increasing shell speed greatly increases destructive power ([10, 11]), since energy depends on the square of velocity.</p>
+
+    <figure style="margin:30px 0; text-align:center;">
+      <img src="Untitled picture3.png" alt="HMS Dreadnought 1906 early dreadnought battleship Royal Navy" style="max-width:60%; border-radius:10px;">
+      <figcaption style="font-size:0.9rem; color:#c7d2fe;"><strong>Figure:</strong> Early 20th‑century steel battleship (HMS Dreadnought era). Image reference: Naval Encyclopedia – https://naval-encyclopedia.com/</figcaption>
+    </figure>
+
+    <h3>The Arms Race</h3>
+    <p>
+      <em>Dreadnought</em> rendered all earlier battleships (pre-dreadnoughts) obsolete
+      overnight, prompting a global naval arms race. Britain, Germany, the United States,
+      Japan, France, Italy, and others competed to build larger, faster, better-armed
+      dreadnoughts. Naval budgets soared pre-1914 as nations sought superiority or parity.
+    </p>
+
+    <p>
+      This competition was driven by industrial capacity and physics-based design
+      constraints. Each new ship class pushed engines, armour, and guns to the limits of
+      materials science and thermodynamics. By 1914, Britain had 22 dreadnoughts and Germany
+      15, representing unprecedented investments in applied physics and engineering.
+    </p>
+  </div>
+
+    <p>
+      Turbines delivered ~23,000 shaft horsepower, enabling sustained high-speed
+      operations.
+    </p>
+  </div>
+
+  <div class="content-block">
+    <h2>4. Destroyers: Speed, Steam Turbines, and Submarine Threats</h2>
+
+    <h3>The Emergence of Destroyers</h3>
+    <p>
+      In the late 19th century, the invention of the self-propelled torpedo threatened
+      capital ships. Small, fast torpedo boats could strike battleships with devastating
+      effect, so navies created torpedo-boat destroyers—eventually shortened to
+      "destroyers"—vessels designed for speed and maneuverability.
+    </p>
+
+    <p>To achieve high speeds (often exceeding 30 knots, or 56 km/h):</p>
+
+    <ul>
+      <li>
+        <strong>Steam turbines</strong> provided high power-to-weight ratios, often
+        achieving 40,000+ shaft horsepower in vessels of 1,500–2,000 tons.
+      </li>
+      <li>
+        <strong>Long, slender hulls</strong> reduced the drag coefficient C<sub>D</sub>
+        and wetted surface area S, with length-to-beam ratios reaching 10:1 or higher.
+      </li>
+      <li>
+        <strong>Fuel transition from coal to oil</strong> increased energy density from
+        ~24 MJ/kg to ~42 MJ/kg, enabling greater power without massive fuel loads.
+      </li>
+    </ul>
+
+    <p>
+      To minimise drag <em>D</em> for a given velocity <em>v</em>, designers reduced hull
+      resistance and maximised power <em>P</em>, exploiting the <em>v³</em> relationship as
+      a fundamental design constraint.
+    </p>
+
+    <h3>ASDIC and Physics of Underwater Detection</h3>
+
+    <figure style="margin:30px 0; text-align:center;">
+      <img src="Untitled picture.png" alt="ASDIC sonar detection diagram" style="max-width:60%; border-radius:10px;">
+      <figcaption style="font-size:0.9rem; color:#c7d2fe;"><strong>Figure:</strong> ASDIC sonar beam geometry showing echo detection and range measurement. Source: http://pwencycl.kgbudge.com/S/o/Sonar.htm</figcaption>
+    </figure>
+
+    <figure style="margin:30px 0; text-align:center;">
+      <img src="Untitled picture1.png" alt="World War II destroyer at sea" style="max-width:60%; border-radius:10px;">
+      <figcaption style="font-size:0.9rem; color:#c7d2fe;"><strong>Figure:</strong> Royal Navy S- and T-class destroyer during World War II. Source: https://en.wikipedia.org/wiki/S_and_T-class_destroyer</figcaption>
+    </figure>
+    <p>
+      By World War I, destroyers evolved beyond torpedo attack to counter submarines. This led to
+      the adoption of ASDIC (Anti-Submarine Detection Investigation Committee, later called sonar),
+      which used acoustic waves in water:
+    </p>
+    <ul>
+      <li>Ships emitted short pulses ("pings") of sound, typically at frequencies of 15–30 kHz</li>
+      <li>These waves travelled through water at approximately 1,500 m/s (varying with temperature and salinity)</li>
+      <li>Sound reflected off objects like submarines returned as echoes</li>
+      <li>By measuring the time delay Δt between ping and echo, operators could estimate distance via:</li>
+    </ul>
+
+    <div class="equation"><strong>Equation:</strong> d = ½c·Δt</div>
+
+    <p><strong>Variables:</strong> d = distance to target (m); c = speed of sound in seawater (≈1500 m/s); Δt = time delay between transmitted ping and received echo (s).</p>
+    <p><strong>Explanation:</strong> The sonar pulse travels to the submarine and back. Multiplying the travel time Δt by the sound speed c gives the total distance travelled, and dividing by 2 gives the one‑way range to the target ([15]).</p>
+
+    <p>
+      The factor of ½ accounts for the round-trip travel time (to the target and back).
+    </p>
+
+    <p>
+      This represented a clear application of wave physics—specifically acoustic propagation,
+      reflection, and time-of-flight measurement. The acoustic impedance mismatch between water
+      and a steel submarine hull (approximately 1.5 × 10⁶ Pa·s/m for water versus 47 × 10⁶ Pa·s/m
+      for steel) causes strong reflections, making detection possible [15].
+    </p>
+
+    <p>
+      ASDIC illustrates how naval warfare physics extends beyond propulsion and ballistics into wave behavior and detection, demonstrating how destroyers evolved into multi-role platforms combining fluid dynamics with acoustic sensing.
+    </p>
+  </div>
+
+    <p>
+      Acoustic reflection and time-of-flight measurement enabled submarine detection.
+    </p>
+  </div>
+
+  <div class="content-block">
+    <h2>5. The Future of Naval Warfare: Emerging Physics-Based Technologies</h2>
+
+    <h3>Nuclear Propulsion</h3>
+    <p><strong>Physics context:</strong> Nuclear energy provides extremely high energy density, allowing ships to operate for decades without refuelling and limiting logistical constraints.</p>
+    <p>
+      Since the 1950s, nuclear-powered warships have transformed naval capabilities by
+      eliminating refuelling requirements. Nuclear reactors provide essentially unlimited
+      range through controlled fission:
+    </p>
+
+    <div class="equation"><strong>Equation:</strong> ²³⁵U + n → fission products + 2–3n + ~200 MeV</div>
+    <p><strong>Variables:</strong> ²³⁵U = uranium‑235 nucleus; n = neutron; MeV = mega‑electron volts (unit of energy).</p>
+    <p><strong>Explanation:</strong> A neutron induces fission in uranium‑235, releasing energy through controlled fission ([16]) (~200 MeV per reaction) and additional neutrons that sustain a controlled chain reaction.</p>
+
+    <p>
+      A single kilogram of uranium-235 releases approximately 8.2 × 10¹³ J—around 2.7
+      million times the energy density of fuel oil. Modern naval reactors generate
+      150–200 MW of thermal power, enabling aircraft carriers to sustain 30+ knots for
+      decades without refuelling.
+    </p>
+
+    
+
+    
+
+    <h3>Unmanned Systems and AI</h3>
+    <p>
+      Autonomous underwater vehicles and unmanned surface vessels exploit physics in
+      novel ways. Wave gliders harvest energy from wave motion and solar panels, achieving
+      near-unlimited endurance. Swarming tactics use acoustic triangulation and
+      time-difference-of-arrival measurements to locate targets.
+    </p>
+
+    
+  </div>
+
+    
+
+    
+
+    
+  </div>
+
+  <div class="content-block">
+    <h2>Conclusion</h2>
+    <p>
+      From sails harnessing aerodynamic lift to nuclear reactors splitting atoms, naval
+      warfare has always been an application of fundamental physics. The future promises
+      even more dramatic transformations as directed energy, quantum sensors, and
+      autonomous systems reshape the physical principles governing maritime dominance.
+      Understanding these physics fundamentals remains essential for comprehending both
+      historical naval development and future technological trajectories.
+    </p>
+  </div>
+
+  <div class="content-block">
+    <h2>References</h2>
+    <ol>
+      <li>(2010). <em>Fundamentals of Aerodynamics</em>, 5th ed. McGraw-Hill. pp. 352–358.</li>
+      <li>(2003). <em>Sail Performance: Techniques to Maximize Sail Power</em>. International Marine/McGraw-Hill.</li>
+      <li>(1989). <em>Power from Steam: A History of the Stationary Steam Engine</em>. Cambridge University Press. p. 26.</li>
+      <li>(1824). <em>Réflexions sur la Puissance Motrice du Feu</em>. Bachelier, Paris.</li>
+      <li>(2012). <em>Marine Propellers and Propulsion</em>, 3rd ed. Butterworth-Heinemann. pp. 58–64.</li>
+      <li>(2011). <em>Ship Resistance and Propulsion</em>. Cambridge University Press. pp. 127–145.</li>
+      <li>(2018). <em>Marine Hydrodynamics</em>, 40th Anniversary Edition. MIT Press. p. 234.</li>
+      <li>(2012). <em>The Challenge: Britain Against America in the Naval War of 1812</em>. Faber &amp; Faber. pp. 156–159.</li>
+      <li>(1990). <em>British Battleships 1860–1950: A History of Design, Construction and Armament</em>. Seaforth Publishing. pp. 442–448.</li>
+      <li>(1985). <em>Jutland: An Analysis of the Fighting</em>. Naval Institute Press. pp. 24–27.</li>
+      <li>(2003). <em>Dreadnought: Britain, Germany, and the Coming of the Great War</em>. Random House. pp. 468–472.</li>
+      <li>(1989). <em>In Defence of Naval Supremacy: Finance, Technology and British Naval Policy, 1889–1914</em>. Unwin Hyman. pp. 197–203.</li>
+      <li>(2004). <em>U.S. Destroyers: An Illustrated Design History</em>. Naval Institute Press. pp. 45–52.</li>
+      <li>(1983). <em>Dreadnought: A History of the Modern Battleship</em>. Macmillan. p. 87.</li>
+      <li>(1983). <em>Principles of Underwater Sound</em>, 3rd ed. McGraw-Hill. pp. 102–115.</li>
+      <li>(2001). <em>Introduction to Nuclear Engineering</em>, 3rd ed. Prentice Hall. pp. 65–68.</li>
+      <li>(2017). “Electromagnetic Railgun Technology Development.” <em>IEEE Transactions on Plasma Science</em>, 45(7), pp. 1569–1576.</li>
+      <li>(2015). “High-Energy Laser Beam Propagation Through the Atmosphere.” <em>Naval Research Laboratory Review</em>, pp. 43–51.</li>
+      <li>(2010). “The Wave Glider: An Energy-Harvesting Autonomous Surface Vessel.” <em>Marine Technology Society Journal</em>, 44(2), pp. 44–53.</li>
+      <li>(2006). <em>Hypersonic and High-Temperature Gas Dynamics</em>, 2nd ed. AIAA. pp. 329–345.</li>
+    </ol>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Physics in Warfare Project | Educational Use Only</p>
+</footer>
+
+</body>
+</html>
