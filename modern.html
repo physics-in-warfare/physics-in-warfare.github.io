@@ -302,10 +302,30 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
   </p>
     <h3>Sensors and Target Detection</h3>
     <p>
-      Modern drones use infrared cameras, radar, and optical sensors to detect and track
-      targets. Signal processing and electromagnetic wave behaviour determine detection
-      range and accuracy.
+      Modern drones make use of sensors to detect and attack enemy targets. These sensors measure certain physical phenomena and convert the information into electrical signals which allows it to be processed by a computer or an autonomous system. 
     </p>
+  <p>
+    Optical Cameras: These measure reflected visible electromagnetic waves (visible light - wavelength range: 400-700nm). Objects that are in the path of the drone reflect light due to their colour and texture. This light is detected by a lens on the drone which uses refraction to focus it, which is governed by Snell's Law:
+    $$
+    n_1 sin\theta_1 = n_2 sin\theta_2
+    $$
+    where $n_1$ and $n_2$ are the refractive indices of the intial and final media respectively, and $\theta_1$ and $\theta_2$ are the angles of incidence and refraction respectively [12].
+ <br>
+    This, now focussed, image is detected by a sensor which uses the photoelectric effect to emit electrons and the intensity of the electrons is governed by the intensity of the light. More electrons generate a stronger signal, which can be used to determine how close an object is. However, optical cameras do have limited use due to poor performance in darkness, smoke or dust. So they are not often sufficient alone for combat. 
+  </p>
+  <p>
+    Infrared (thermal imaging) sensors: These measure infrared radiation emitted by objects (wavelength range: 8-14μm - long-wave IR). The background physics follows that of blackbody radiation - all objects that have temperature above 0K emit radiation according to the principle of blackbody radiation. The power radiated by an object is given by
+    $$
+    P = \sigma A T^4
+    $$
+    where $\sigma$ is the Steffan-Boltzmann constant, $A$ is the area, and $T$ is the temperature [13].
+    <br>
+    Hotter objects emit more radiation. The imaging cameras detect the radiation and focus it onto a sensor array, which converts the information into an electrical signal which can be interpreted as a colourful image, with different colours showing different temperatures. Therefore, thermal imaging sensors are very useful in warfare because they can detect anything that emits heat, including humans, vehicles that are running, and weapons that have recently been or are being fired. They can be detected even at night and in poor visibility. However, thermal imaging does have limitations, including lower heat contrasts in hotter settings, decreased effectiveness in heavy rain, or if objects are thermally shielded (temperature minimized through heat transfer by insulation or reflection). 
+  </p>
+  <p>
+    Radar (Radio Detection and Ranging): This measures speed, distance and shape of objects using radiowave and microwave radiation (wavelength range: 1mm to 1m). Radar emits an electromagnetic pulse (short, intense burst). This pulse reflects off of an object and its echo returns to a detector. Distance is calculated by multiplying the time between the signal being sent out and its echo being detected with the speed of EM waves, and then dividing it by 2. If the target is moving, the Doppler Effect must be used. This is given by
+    
+  </p>
   </div>
 
   <div class="content-block">
@@ -371,6 +391,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
 
 
 </html> 
+
 
 
 
