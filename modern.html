@@ -276,11 +276,30 @@ Drag: The force opposing motion through a fluid (air, in the case of drones). Th
     <p>
       When a drone is flying it must know its speed, direction and orientation at all times, and so it uses sensors and feedback systems in order to control this. 
 
- 
-
-One key movement that a drone must control is its rotation. Drones can rotate about the three axes: roll (tilting left and right); pitch (tilting forwards and backwards); and yaw (turning left and right horizontally). The equation for torque dictates a drone's orientation in the air, by showing how changing the motor forces (and so, changing the acceleration) alters the torque, the turning force that allows it to rotate. 
     </p>
-
+<p>
+One key movement that a drone must control is its rotation. Drones can rotate about the three axes: roll (tilting left and right); pitch (tilting forwards and backwards); and yaw (turning left and right horizontally). The equation for torque dictates a drone's orientation in the air, by showing how changing the motor forces (and so, changing the acceleration) alters the torque, the turning force that allows it to rotate. The equation for torque is given by
+  $$ 
+  \tau = I \alpha
+  $$
+  where $I$ is the moment of inertia and $\alpha$ is the angular acceleration of the drone [9].
+    </p>
+<p>
+  Some drones also use MEMS gyroscopes (devices that maintain orientation and angular velocity, using the principle of momentum of angular velocity). As the drone rotates, internal vibrating parts of it experience a sideways force (the Coriolis effect) and this force is proportional to the angular velocity. The gyroscope outputs information about its current angular velocity and tilt. This information is processed by a PID (Proportional-Integral-Derivative) controller which compares it with the desired angular velocity and tilt of the drone and calculates by how much the motor speed needs to be altered, so that the drone can restabilize. 
+</p>
+  <p> 
+  Another important aspect of drone movement is acceleration. Drones are fitted with accelerometers which rely on Newton's 2nd Law:
+    $$
+    F = ma
+    $$
+    where $m$ is the mass of the drone and $a$ is its acceleration [10].
+    <br>
+    This equation is used to calculate linear acceleration in the x,y,z planes. The accelerometer contains a small mass which is suspended by springs. This mass lags behind when the drone accelerates and the accelerometer casing moves with it. This compresses or stretches a spring (depending on direction) and a restoring force develops in the spring. The displacement of the spring is measured. This information is also processed by a PID controller which tells it how to correct any undesired changes in speed or direction. Some drones use MEMS accelerometers instead, where there is no spring, rather the mass forms part of a capacitor. As it moves the distance between the plates of the capacitor changes, causing the capacitance to change according to 
+    $$
+    C = \frac{\epsilon A}{d}
+    $$
+    where $\epsilon$ is the dielectric permittivity, $A$ is the area of the plates, and $d$ is the distance between the plates [11]. This generates an electrical signal which is then processed by the PID controller. 
+  </p>
     <h3>Sensors and Target Detection</h3>
     <p>
       Modern drones use infrared cameras, radar, and optical sensors to detect and track
@@ -352,6 +371,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
 
 
 </html> 
+
 
 
 
