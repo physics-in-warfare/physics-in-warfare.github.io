@@ -332,7 +332,7 @@ engineering estimates.
 <p>
 Change velocity or air density to simulate different flight speeds or altitudes.
 Lower air density represents high-altitude flight.
-The MQ-9 Reaper operates at a maximum cruise velocity of 125 m/s and minimum air density 0.187 kg/m³ (at 50,000 ft).
+The MQ-9 Reaper operates at a maximum cruise velocity of 125 m/s and minimum air density 0.187 kg/m³ (at 50,000 ft) [9][10].
 </p>
 
 <label>Velocity v (m/s)</label>
@@ -363,7 +363,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
   $$ 
   \tau = I \alpha
   $$
-  where $I$ is the moment of inertia and $\alpha$ is the angular acceleration of the drone [9].
+  where $I$ is the moment of inertia and $\alpha$ is the angular acceleration of the drone [11].
     </p>
 <p>
   Some drones also use MEMS gyroscopes (devices that maintain orientation and angular velocity, using the principle of momentum of angular velocity). As the drone rotates, internal vibrating parts of it experience a sideways force (the Coriolis effect) and this force is proportional to the angular velocity. The gyroscope outputs information about its current angular velocity and tilt. This information is processed by a PID (Proportional-Integral-Derivative) controller which compares it with the desired angular velocity and tilt of the drone and calculates by how much the motor speed needs to be altered, so that the drone can restabilize. 
@@ -373,13 +373,13 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     F = ma
     $$
-    where $m$ is the mass of the drone and $a$ is its acceleration [10].
+    where $m$ is the mass of the drone and $a$ is its acceleration [12].
     <br>
     This equation is used to calculate linear acceleration in the x,y,z planes. The accelerometer contains a small mass which is suspended by springs. This mass lags behind when the drone accelerates and the accelerometer casing moves with it. This compresses or stretches a spring (depending on direction) and a restoring force develops in the spring. The displacement of the spring is measured. This information is also processed by a PID controller which tells it how to correct any undesired changes in speed or direction. Some drones use MEMS accelerometers instead, where there is no spring, rather the mass forms part of a capacitor. As it moves the distance between the plates of the capacitor changes, causing the capacitance to change according to 
     $$
     C = \frac{\epsilon A}{d}
     $$
-    where $\epsilon$ is the dielectric permittivity, $A$ is the area of the plates, and $d$ is the distance between the plates [11]. This generates an electrical signal which is then processed by the PID controller. 
+    where $\epsilon$ is the dielectric permittivity, $A$ is the area of the plates, and $d$ is the distance between the plates [13]. This generates an electrical signal which is then processed by the PID controller. 
   </p>
     <h3>Sensors and Target Detection</h3>
     <p>
@@ -390,7 +390,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     n_1 sin\theta_1 = n_2 sin\theta_2
     $$
-    where $n_1$ and $n_2$ are the refractive indices of the initial and final media respectively, and $\theta_1$ and $\theta_2$ are the angles of incidence and refraction respectively [12].
+    where $n_1$ and $n_2$ are the refractive indices of the initial and final media respectively, and $\theta_1$ and $\theta_2$ are the angles of incidence and refraction respectively [14].
  <br>
     This, now focussed, image is detected by a sensor which uses the photoelectric effect to emit electrons and the intensity of the electrons is governed by the intensity of the light. More electrons generate a stronger signal, which can be used to determine how close an object is. However, optical cameras do have limited use due to poor performance in darkness, smoke or dust. So they are not often sufficient alone for combat. 
   </p>
@@ -399,7 +399,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     P = \sigma A T^4
     $$
-    where $\sigma$ is the Steffan-Boltzmann constant, $A$ is the area, and $T$ is the temperature [13].
+    where $\sigma$ is the Steffan-Boltzmann constant, $A$ is the area, and $T$ is the temperature [15].
     <br>
     Hotter objects emit more radiation. The imaging cameras detect the radiation and focus it onto a sensor array, which converts the information into an electrical signal which can be interpreted as a colourful image, with different colours showing different temperatures. Therefore, thermal imaging sensors are very useful in warfare because they can detect anything that emits heat, including humans, vehicles that are running, and weapons that have recently been or are being fired. They can be detected even at night and in poor visibility. However, thermal imaging does have limitations, including lower heat contrasts in hotter settings, decreased effectiveness in heavy rain, or if objects are thermally shielded (temperature minimized through heat transfer by insulation or reflection). 
   </p>
@@ -408,7 +408,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     f_0 = f_s \frac{v \pm v_0}{v \mp v_s}
     $$
-    where $f_s$ is the source frequency, $v$ is the sound wave velocity, $v_0$ is the observer velocity, and $v_s$ is the source velocity [14].
+    where $f_s$ is the source frequency, $v$ is the sound wave velocity, $v_0$ is the observer velocity, and $v_s$ is the source velocity [16].
     <br>
     This is useful in a military setting because it works in all weather conditions and light conditions and is really good for measuring the distance of objects that are far away. Radar's limitations included high power usage and ineffectiveness against stealth technology - vehicles and weapons can be designed using certain shapes and angles that deflect the waves in the wrong direction, or they are coated with materials that absorb the waves rather than reflect them. 
 
@@ -428,21 +428,21 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
   $$
     E(t) = [A + m(t)]sin(2 \pi f t)
     $$
-    where $t$ is the time, $A$ is the amplitude, $m$ is the information signal, and $f$ is the frequency [15].
+    where $t$ is the time, $A$ is the amplitude, $m$ is the information signal, and $f$ is the frequency [17].
   </p>
   <p>
     Frequency Modulation (FM): Only frequency is varied (around a central value) - this changes the phase indirectly, but all else is kept constant. Information is encoded as small shifts in the frequency. FM is far more reliable in a military setting than AM as it is not affected much by noise. It is mostly used for radio control and voice messages. The frequency shift is what encodes the information. The electric field for FM is given by
 $$
     E(t) = Asin(2 \pi [f + \Delta f(t)]t)
     $$
-    where $\Delta f(t)$ is the frequenct shift [16].
+    where $\Delta f(t)$ is the frequenct shift [18].
   </p>
    <p>
      Phase Modulation (PM): Amplitude and frequency stay constant, while phase is shifted either forwards or backwards. The instantaneous amplitude of the base signal modifies the phase of the carrier signal keeping amplitude and frequency constant. This delivers the message in phase shifts. PM is good because it is resistant  to noise and is very efficient. It is mostly used for digital messages and encrypted links. The phase shift is what encodes the information. The electric field for this is given by
      $$
      E(t) = Asin(2 \pi ft + \phi (t))
      $$
-     where $\phi (t)$ is the phase shift [17].
+     where $\phi (t)$ is the phase shift [19].
    </p>
   <p>
     There are numerous downsides to RF communication, however.  These include
@@ -452,14 +452,14 @@ $$
     $$
     d \approx \sqrt{2Rh}
     $$
-    where $R$ is the radius of the Earth and $h$ is the height of the drone [16].
+    where $R$ is the radius of the Earth and $h$ is the height of the drone [20].
   </p>
   <p>
     Loss of signal strength: Radio waves spread out according to the inverse square law as they travel. This means that increasing distance greatly decreases power, making long-range drone control difficult. This power loss is described by
     $$
     P \propto \frac{1}{r^2}
     $$
-    where $r$ is the distance from the signal transmitter [17].
+    where $r$ is the distance from the signal transmitter [21].
   </p>
   <p>
     Interference: When multiple signals overlap, they superpose which can distort the signal, or completely eliminate it (destructive interference). 
@@ -478,9 +478,9 @@ $$
   <div class="content-block">
     <h2>Directed Energy Weapons</h2>
     <p>
-      Directed energy weapons (DEWs) are ones that damage their target using a source of highly concentrated energy, rather than any solid projectiles. The main types include Lasers, microwaves and particle beams. Lasers are the most widely used DEW and were invented in 1960 and first used for combat purposes in the Vietnam and Falklands wars during the 1970s and 1980s [18][19]. They were used for targeting and guiding bombs. Microwave DEWs began being used in the Iraq War in the early 2000s as electronic weapons, disabling systems [20]. They have since been used in counter-drone operations in the 2020s – the UK MoD used them between 2024 and 2025 for this purpose [21]. 
+      Directed energy weapons (DEWs) are ones that damage their target using a source of highly concentrated energy, rather than any solid projectiles. The main types include Lasers, microwaves and particle beams. Lasers are the most widely used DEW and were invented in 1960 and first used for combat purposes in the Vietnam and Falklands wars during the 1970s and 1980s [22][23]. They were used for targeting and guiding bombs. Microwave DEWs began being used in the Iraq War in the early 2000s as electronic weapons, disabling systems [24]. They have since been used in counter-drone operations in the 2020s – the UK MoD used them between 2024 and 2025 for this purpose [25]. 
     </p>
-<img src="laser_image3.JPG" width="600"> [22]
+<img src="laser_image3.JPG" width="600"> [26]
   </div>
       <div class="content-block">
     <h3>Lasers (Light Amplification by Stimulated Emission of Radiation)</h3>
@@ -489,13 +489,50 @@ $$
    $$
       E = E_2 - E_1 = hf
       $$
-      where $E_2$ is the final energy, $E_1$ is the initial energy, $h$ is Planck's constant, and $f$ is the frequency [23].
+      where $E_2$ is the final energy, $E_1$ is the initial energy, $h$ is Planck's constant, and $f$ is the frequency [27].
     </p>
-
-    <div class="equation">
-      Power density = P / (πr²)
-    </div>
-
+<p>
+The process of adding energy to an atom when making a laser is called pumping. There are three main methods of pumping: 
+  <br>
+  Electrical pumping – An electric current is passed through the laser medium. Then the electric field accelerates the electrons and energy is transferred to the electrons and they are excited to a higher energy level.  
+  <br>
+  Optical pumping – Light from an external source is shone onto the laser medium. The incoming photons are absorbed by the medium and the electrons becoming excited. 
+  <br>
+  Chemical pumping – An exothermic chemical reaction releases energy directly into the laser medium, which excites the electrons. 
+  <br>
+  Only electrical and optical pumping methods are commonly used today in a military setting as they are more efficient and easily controlled. 
+</p>
+   <p>
+For standard light emission, the photon is emitted spontaneously in a random direction and phase. However, for lasers, there is an added requirement – in the medium, there must be more electrons in an excited state than in a lower state – this is called population inversion. This means the pumping must be faster than the spontaneous decay. Also they must use specialized energy structures. There are three main types of these specialized media: 
+<br>
+     Solid State Lasers (medium: solid crystal or glass doped with ions) - The ions in the crystal structures have quantized energy levels. Example: Nd:YAG. 
+<br>
+Fiber Lasers (medium: optical fiber doped with rare Earth ions) - Light is directed by total internal reflection. The light in the fiber hits the rare Earth ions, which absorb the light and become excited. 
+<br>
+Semi-conductor / diode Lasers (medium: semiconductor junction): They pass electrons through a p-n junction diode. Electrons in the conduction band recombine with holes in the valence band, which releases energy as photons. 
+ <br>
+     Solid state and fiber lasers are heavily used in military settings, while semi-conductor lasers are used mainly in support systems.
+     
+   </p>
+       <p>
+The next part is stimulated emission, where the emitted photons with energy hf pass near an excited atom, which can stimulate the atom to drop in energy levels, emitting a second photon with exactly the same frequency and phase. These photons pass by more excited atoms, leading to more stimulated emission and even more photons. This creates an exponential amplification of light. Then, optical cavities, made up of one fully reflective and one partially reflective mirror, force the photons to bounce back and forth, which stimulates more emission and creates directionality and coherence in the laser beam. Only certain wavelengths of light can fit in the optical cavity. This leads to a monochromatic light beam with very low divergence. As the beam leaves the laser, it passes a partially reflective mirror, allowing only a small fraction of the light to escape. The light beam is, therefore, highly intense and coherent. Once the beam has left the laser it propagates as an electromagnetic wave, which transfers energy to the target via absorption. This causes the target to heat up  drastically, damaging it. 
+       </p> 
+<p>
+  Lasers are particularly useful because they travel at the speed of light, they can be focussed with high intensity and high precision on targets and have no ballistic drop, making aiming easy. They work particularly well against support weapons, such as drones and missiles. 
+</p>
+        <p>
+          However there are some limitations of lasers: 
+          <br>
+          Atmospheric absorption is where particles in the air (mainly H20 and CO2), dust, smoke and rain can interact with the laser beams, either absorbing some of the energy, making them less powerful; or by scattering them in different directions. 
+          <br>
+          Beam divergence is where the laser beam spreads out and loses some intensity. The angle that the beam spreads out by is given in this equation 
+          $$
+          \theta = \frac{\lambda}{\pi \omega_0}
+          $$
+          where $\lambda$ is the wavelength and $\omega_0$ is the radius of the beam at its narrowest point [28].
+          <br>
+          Line of sight restrictions are where lasers cannot go through walls or over hills, so they are limited to direct scenarios. 
+        </p>
     <h3>High-Power Microwave DEWs</h3>
     <p>
       High-power microwave weapons emit intense electromagnetic pulses that disrupt or
@@ -569,5 +606,6 @@ function calculateMQ9Forces() {
 
 
 </html> 
+
 
 
