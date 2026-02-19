@@ -233,7 +233,6 @@ Lift: The upward force that counteracts weight and allows the drone to remain in
   $$
 L = \frac{1}{2}\rho v^2 C_L S
 $$
-<br>
   where $\rho$ is the air density, $v$ is the air speed, $C_L$ is the lift coefficient, and $S$ is the wing area [5].This links to warfare as military drones often require efficient lift to save energy to carry out long surveillances. As well as this, high altitude drones need larger wings due to lower air density to stay airborne. 
 
  <br>
@@ -243,7 +242,6 @@ Weight: Downward force exerted by Earth's gravitational field. This means drones
   $$
   W = mg
   $$
-  <br>
   where $m$ is the mass of the drone and $g$ is the acceleration due to gravity [6].
 <br> 
 Military drones are often also made using lightweight materials, for example: 
@@ -266,11 +264,12 @@ Thrust in drones is produced by electric motors (which produce an electromagneti
 <br> 
  
 
-Drag: The force opposing motion through a fluid (air, in the case of drones). 
+Drag: The force opposing motion through a fluid (air, in the case of drones). This is given by 
 <br> 
-[8] 
-<br> 
-The types of drag include parasitic drag (from the body, wings, weapons etc of the drone), induced drag (caused by generating lift), and skin friction (due to the viscosity of the air). The reduction of drag is important in drones because it increases two-fold with speed and external weaponry can significantly increase it. Drag can be decreased by using streamlined designs, increasing the efficiency and flight time. 
+  $$
+  D = \frac{1}{2}\rho v^2 C_D S
+  $$
+  where $C_D$ is the drag coefficient [8]. The types of drag include parasitic drag (from the body, wings, weapons etc of the drone), induced drag (caused by generating lift), and skin friction (due to the viscosity of the air). The reduction of drag is important in drones because it increases two-fold with speed and external weaponry can significantly increase it. Drag can be decreased by using streamlined designs, increasing the efficiency and flight time. 
     </p>
 
     <h3>Control and Navigation</h3>
@@ -351,6 +350,7 @@ The types of drag include parasitic drag (from the body, wings, weapons etc of t
 
 
 </html> 
+
 
 
 
