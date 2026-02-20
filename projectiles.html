@@ -1,0 +1,2791 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+<script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script> 
+
+  
+
+  <meta charset="UTF-8"> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>Physics in Warfare | Projectiles</title> 
+
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+
+<a href="#references">References</a> 
+
+  
+
+  
+
+  <!-- MathJax (equations) --> 
+
+  <script> 
+
+    window.MathJax = { 
+
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] }, 
+
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] } 
+
+    }; 
+
+  </script> 
+
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+
+  
+
+  <style> 
+
+    body { 
+
+      margin: 0; 
+
+      font-family: 'Roboto', sans-serif; 
+
+      background: linear-gradient(135deg, #0a0f1f, #121a33); 
+
+      color: #e6ecff; 
+
+      line-height: 1.7; 
+
+    } 
+
+  
+
+    h1, h2, h3 { 
+
+      font-family: 'Orbitron', sans-serif; 
+
+      color: #7dd3fc; 
+
+    } 
+
+  
+
+    section { padding: 60px 12%; } 
+
+  
+
+    nav { 
+
+      background: rgba(10,15,31,0.95); 
+
+      padding: 15px 12%; 
+
+      border-bottom: 1px solid #1e293b; 
+
+      display: flex; 
+
+      justify-content: space-between; 
+
+      align-items: center; 
+
+      position: sticky; 
+
+      top: 0; 
+
+      z-index: 50; 
+
+      backdrop-filter: blur(10px); 
+
+    } 
+
+  
+
+    nav .brand { 
+
+      display: flex; 
+
+      align-items: baseline; 
+
+      gap: 14px; 
+
+    } 
+
+  
+
+    nav a { 
+
+      color: #38bdf8; 
+
+      text-decoration: none; 
+
+      font-weight: bold; 
+
+      margin-left: 14px; 
+
+    } 
+
+  
+
+    .content-block { 
+
+      background: #020617; 
+
+      border: 1px solid #1e293b; 
+
+      border-radius: 15px; 
+
+      padding: 30px; 
+
+      margin-bottom: 40px; 
+
+      box-shadow: 0 0 20px rgba(56,189,248,0.1); 
+
+    } 
+
+  
+
+    .meta { 
+
+      font-size: 0.9rem; 
+
+      color: #c7d2fe; 
+
+      margin-bottom: 20px; 
+
+    } 
+
+  
+
+    .equation { 
+
+      background: #020617; 
+
+      border-left: 4px solid #38bdf8; 
+
+      padding: 15px 20px; 
+
+      margin: 20px 0; 
+
+      color: #e0f2fe; 
+
+      border-radius: 10px; 
+
+      overflow-x: auto; 
+
+    } 
+
+  
+
+    figure.media { 
+
+      margin: 18px 0 8px 0; 
+
+      border: 1px solid #1e293b; 
+
+      border-radius: 14px; 
+
+      overflow: hidden; 
+
+      background: rgba(2,6,23,0.55); 
+
+      box-shadow: 0 0 18px rgba(56,189,248,0.08); 
+
+    } 
+
+    figure.media img { 
+
+      width: 100%; 
+
+      height: auto; 
+
+      display: block; 
+
+    } 
+
+    figure.media figcaption { 
+
+      padding: 10px 14px; 
+
+      font-size: 0.95rem; 
+
+      color: #c7d2fe; 
+
+      border-top: 1px solid #1e293b; 
+
+    } 
+
+  
+
+    ul { margin-left: 20px; } 
+
+  
+
+    footer { 
+
+      background: #020617; 
+
+      padding: 25px; 
+
+      text-align: center; 
+
+      border-top: 1px solid #1e293b; 
+
+      font-size: 0.9rem; 
+
+    } 
+
+  
+
+    @media (max-width: 768px) { 
+
+      section { padding: 40px 6%; } 
+
+      nav { padding: 15px 6%; } 
+
+    } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+  
+
+  <!-- Single-page Navigation --> 
+
+  <nav> 
+
+    <div class="brand"> 
+
+      <h2 style="margin:0;">Physics in Warfare</h2> 
+
+      <span style="color:#c7d2fe;">Single-page project</span> 
+
+    </div> 
+
+    <div> 
+
+      <a href="#projectiles">Projectiles</a> 
+
+      <a href="#references">References</a> 
+
+    </div> 
+
+  </nav> 
+
+  
+
+  <section> 
+
+  
+
+    <h1>Physics in Warfare: Development of Projectiles Through the Ages</h1> 
+
+  
+
+    <div class="meta"> 
+
+      <p>Last updated: 19 February 2026</p> 
+
+    </div> 
+
+  
+
+    <!-- PROJECTILES --> 
+
+    <div class="content-block" id="projectiles"> 
+
+      <h2>Projectiles</h2> 
+
+  
+
+      <!-- INTRO --> 
+
+      <h3>Introduction</h3> 
+
+      <p> 
+
+        Across centuries, the main “physics problem” is not simply making projectiles more powerful. 
+
+        It is reducing sensitivity to uncertainty: controlling how launch variability, wind, drag, 
+
+        and modelling error translate into miss distance. 
+
+      </p> 
+
+      <p> 
+
+        The history of projectile development is the progressive engineering reduction of system sensitivity. 
+
+      </p> 
+
+      <p> 
+
+        Smoothbore cannon amplify uncertainty; rifling suppresses aerodynamic instability; fuses and fragmentation 
+
+        redefine accuracy as spatial lethality; bombing exposes system-level open-loop fragility; rockets introduce 
+
+        integration drift; guidance introduces feedback control [1][2][3][4]. 
+
+      </p> 
+
+      <p> 
+
+        The defining transformation is the move from prediction-only systems to correction-capable systems. 
+
+      </p> 
+
+  
+
+      <!-- CONTENT BELOW IS INTENTIONALLY BLANK: you will add sections 1–6 next --> 
+
+  
+
+    </div> 
+
+  
+
+  
+
+  </section> 
+
+  
+
+  <footer> 
+
+    <p>© 2026 Physics in Warfare Project | Educational Use Only</p> 
+
+  </footer> 
+
+  
+
+</body> 
+
+</html> 
+
+<div class="content-block" id="sec1"> 
+
+  <h2>1) Early Gunpowder Artillery (14th–18th century)</h2> 
+
+  <p><b>Smoothbore cannons, round shot, early mortars</b></p> 
+
+  
+
+  <h3>Representative devices</h3> 
+
+  <ul> 
+
+    <li><b>Culverin (16th–17th century).</b> A long-barrelled smoothbore cannon firing spherical shot. Improved range compared to earlier bombards, but still highly sensitive to windage and powder variation.</li> 
+
+    <li><b>Napoleonic 12-pounder field gun.</b> Widely used smoothbore artillery piece. Effective at battlefield distances, but dispersion increased rapidly at longer ranges due to spherical drag and velocity variability.</li> 
+
+    <li><b>Early mortars.</b> High-angle smoothbore weapons firing explosive shells. Range estimation and powder consistency strongly affected impact accuracy.</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Gunpowder provided unprecedented impulse energy compared to torsion catapults or trebuchets. 
+
+    But early artillery suffered from extreme inconsistency. A smoothbore cannon firing a spherical ball 
+
+    is sensitive to: 
+
+  </p> 
+
+  
+
+  <ul> 
+
+    <li>variable powder burn rate,</li> 
+
+    <li>inconsistent packing and ignition,</li> 
+
+    <li>windage (gas leakage),</li> 
+
+    <li>barrel fouling altering friction,</li> 
+
+    <li>exit yaw and asymmetry,</li> 
+
+    <li>large aerodynamic drag,</li> 
+
+    <li>crosswind sensitivity,</li> 
+
+    <li>wake instability behind the sphere.</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Over long ranges, these small uncertainties compound. Both historical accounts and modern ballistic 
+
+    reconstruction confirm substantial dispersion in black-powder artillery [2][5]. 
+
+  </p> 
+
+  
+
+  <h3>What changed historically</h3> 
+
+  <p> 
+
+    The key change was not simply more energy — it was the recognition that energy alone does not guarantee effectiveness. 
+
+    Benjamin Robins’ ballistic pendulum experiments demonstrated that muzzle velocity was neither constant nor easily 
+
+    predictable [6]. Robins also recognised the importance of air resistance, something earlier gunnery tables often ignored. 
+
+    This marks the beginning of scientific exterior ballistics. 
+
+  </p> 
+
+  
+
+  <h3>Deeper physics: internal ballistics</h3> 
+
+  <p><b>Projectile acceleration inside the barrel</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      m\,\frac{dv}{dt} \;=\; A\,P(t)\;-\;F_f 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p><b>Variables</b></p> 
+
+  <ul> 
+
+    <li>\(m\) = projectile mass</li> 
+
+    <li>\(v\) = projectile velocity in the barrel</li> 
+
+    <li>\(t\) = time</li> 
+
+    <li>\(A\) = bore cross-sectional area</li> 
+
+    <li>\(P(t)\) = time-dependent gas pressure</li> 
+
+    <li>\(F_f\) = friction force in barrel</li> 
+
+  </ul> 
+
+  
+
+  <p><b>Muzzle velocity (impulse form)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      v_0 \;=\; \frac{1}{m}\int_{0}^{t_{\text{exit}}} A\,P(t)\,dt 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(v_0\) = muzzle velocity</li> 
+
+    <li>\(t_{\text{exit}}\) = time when the projectile exits the barrel</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Black powder combustion is not perfectly uniform. Variations in grain geometry and packing produce 
+
+    pressure-curve differences. If the pressure deviates by \(\Delta P(t)\), then the corresponding 
+
+    muzzle-velocity deviation is: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      \Delta v_0 \;=\; \frac{1}{m}\int_{0}^{t_{\text{exit}}} A\,\Delta P(t)\,dt 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p> 
+
+    Thus, velocity spread is directly proportional to combustion variability [1]. Windage reduces effective 
+
+    chamber pressure and can produce asymmetric acceleration, introducing yaw at muzzle exit [5]. 
+
+  </p> 
+
+  
+
+  <h3>Error amplification</h3> 
+
+  <p><b>Vacuum range (fixed launch angle, no drag)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      R \;\propto\; \frac{v_0^2}{g} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p><b>Sensitivity to muzzle-velocity error</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      \frac{\Delta R}{R} \;\approx\; 2\,\frac{\Delta v_0}{v_0} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p> 
+
+    This quadratic mapping means velocity error is amplified in range [1]. 
+
+  </p> 
+
+  
+
+  <h3>Deeper physics: aerodynamic instability</h3> 
+
+  <p><b>Quadratic drag model (vector form)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      m\,\frac{d\mathbf{v}}{dt} \;=\; m\,\mathbf{g}\;-\;\frac{1}{2}\,\rho\,C_D\,A\,\lVert \mathbf{v}\rVert\,\mathbf{v} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p><b>Variables</b></p> 
+
+  <ul> 
+
+    <li>\(\rho\) = air density</li> 
+
+    <li>\(C_D\) = drag coefficient</li> 
+
+    <li>\(A\) = reference area</li> 
+
+    <li>\(\mathbf{v}\) = velocity vector</li> 
+
+    <li>\(\lVert \mathbf{v}\rVert\) = speed</li> 
+
+    <li>\(\mathbf{g}\) = gravitational acceleration vector</li> 
+
+  </ul> 
+
+  
+
+  <p><b>Sphere (subsonic regime)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      C_D \;\approx\; 0.47 
+
+    \] 
+
+  </div> 
+
+  <p>[3]</p> 
+
+  
+
+  <p><b>Ballistic coefficient</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      BC \;=\; \frac{m}{C_D\,A} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p> 
+
+    Low \(BC\) means strong deceleration. In a simplified speed-only model: 
+
+  </p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      \frac{dV}{dt} \;=\; -\frac{\rho}{2\,BC}\,V^2 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p><b>Wind drift scaling</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      \Delta y \;=\; \int_{0}^{t_{\text{flight}}} v_{\text{wind}}(t)\,dt 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p> 
+
+    Additionally, spherical projectiles exhibit unstable wake separation at moderate Reynolds number, 
+
+    causing fluctuating drag forces [3]. Thus smoothbores combine internal pressure variability, 
+
+    aerodynamic drag instability, and long atmospheric exposure: high energy, high uncertainty. 
+
+  </p> 
+
+  
+
+  <h3>Section summary</h3> 
+
+  <p> 
+
+    Early gunpowder artillery achieved unprecedented impulse energy but lacked control over variability. 
+
+    Combustion inconsistency, windage, spherical drag, and long time-of-flight amplified small launch differences 
+
+    into large dispersion. The physics of the era was dominated by sensitivity growth rather than precision engineering. 
+
+  </p> 
+
+  
+
+  <h3>Example</h3> 
+
+  <p> 
+
+    In 17th-century siege warfare campaigns in Europe, smoothbore cannon were effective against static walls but 
+
+    unreliable at long-range targeting of moving formations. The spherical round shot, combined with inconsistent 
+
+    powder charges, meant artillery was used more for area suppression than precise engagement [2][5]. 
+
+  </p> 
+
+</div> 
+
+<div class="content-block" id="sec2"> 
+
+  <h2>2) Rifling and Elongated Shells (19th century)</h2> 
+
+  <p><b>Spin stabilisation and the predictable projectile</b></p> 
+
+  
+
+  <h3>Representative devices</h3> 
+
+  <ul> 
+
+    <li><b>Armstrong Rifle (1850s–1860s).</b> One of the first successful rifled breech-loading artillery systems. Demonstrated dramatically improved range and accuracy through spin stabilisation.</li> 
+
+    <li><b>Parrott Rifle (American Civil War).</b> Rifled artillery piece using elongated shells. Showed improved ballistic performance over smoothbores but still limited by metallurgy.</li> 
+
+    <li><b>Minié Ball (rifled musket projectile).</b> Conical bullet designed to expand into rifling grooves. Increased accuracy and range compared to spherical musket balls.</li> 
+
+  </ul> 
+
+  
+
+  <!-- Simple explanation (NO heading) --> 
+
+  <p> 
+
+    Rifling adds controlled angular momentum to the projectile. Instead of tumbling chaotically, the projectile stabilises 
+
+    gyroscopically. This suppresses aerodynamic orientation error and dramatically reduces dispersion. It also allows 
+
+    elongated projectiles with lower drag. 
+
+  </p> 
+
+  
+
+  <h3>What changed historically</h3> 
+
+  <p>Two major engineering developments occurred:</p> 
+
+  <ul> 
+
+    <li>spiral rifling grooves,</li> 
+
+    <li>ogival (streamlined) projectile shapes.</li> 
+
+  </ul> 
+
+  <p> 
+
+    This increased range, reduced yaw, and enabled reliable ballistic tables [2]. Instead of fighting aerodynamic instability, 
+
+    rifling prevents it. 
+
+  </p> 
+
+  
+
+  <h3>Deeper physics: gyroscopic stability</h3> 
+
+  
+
+  <p><b>Angular momentum</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      \mathbf{L} \;=\; I\,\omega\,\hat{\mathbf{s}} 
+
+    \] 
+
+  </div> 
+
+  <ul> 
+
+    <li>\(\mathbf{L}\) = angular momentum vector</li> 
+
+    <li>\(I\) = moment of inertia about the spin axis</li> 
+
+    <li>\(\omega\) = spin angular velocity</li> 
+
+    <li>\(\hat{\mathbf{s}}\) = unit vector along spin axis</li> 
+
+  </ul> 
+
+  
+
+  <p><b>Aerodynamic torque (scaled form)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      \tau \;\sim\; q\,S\,d\,C_{m_\alpha} 
+
+    \] 
+
+  </div> 
+
+  <ul> 
+
+    <li>\(\tau\) = aerodynamic pitching torque magnitude</li> 
+
+    <li>\(q\) = dynamic pressure</li> 
+
+    <li>\(S\) = reference area</li> 
+
+    <li>\(d\) = projectile diameter</li> 
+
+    <li>\(C_{m_\alpha}\) = pitching-moment coefficient slope (per angle of attack)</li> 
+
+  </ul> 
+
+  
+
+  <p><b>Dynamic pressure</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      q \;=\; \tfrac{1}{2}\,\rho\,V^2 
+
+    \] 
+
+  </div> 
+
+  <ul> 
+
+    <li>\(\rho\) = air density</li> 
+
+    <li>\(V\) = speed magnitude</li> 
+
+  </ul> 
+
+  
+
+  <p><b>Gyroscopic stability factor (scaled form)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      S_g \;=\; \frac{I\,\omega}{q\,S\,d\,C_{m_\alpha}} 
+
+    \] 
+
+  </div> 
+
+  <ul> 
+
+    <li>\(S_g\) = gyroscopic stability factor</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    If \(S_g &gt; 1\), the projectile is stable [1]. Spin causes applied torque to produce precession rather than tumbling. 
+
+    However, spin introduces secondary effects: 
+
+  </p> 
+
+  <ul> 
+
+    <li>yaw of repose,</li> 
+
+    <li>Magnus drift (spin-induced lateral force).</li> 
+
+  </ul> 
+
+  <p> 
+
+    Thus rifling reduces instability but introduces predictable spin-drift corrections. 
+
+  </p> 
+
+  
+
+  <h3>Ballistic coefficient improvements</h3> 
+
+  <p>Elongated projectiles reduce drag coefficient and increase ballistic coefficient:</p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      BC \;=\; \frac{m}{C_D\,A} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p>Higher \(BC\) reduces deceleration in a simplified speed-only model:</p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      \frac{dV}{dt} \;=\; -\frac{\rho}{2\,BC}\,V^2 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p> 
+
+    Reduced time-of-flight reduces wind sensitivity. Thus rifling reduces both rotational and aerodynamic uncertainty. 
+
+    This is the first major engineered suppression of system sensitivity. 
+
+  </p> 
+
+  
+
+  <h3>Section summary</h3> 
+
+  <p> 
+
+    Rifling marked the first major reduction in aerodynamic uncertainty. By imparting spin, projectiles became gyroscopically 
+
+    stable, eliminating tumbling and dramatically reducing drag variability. Elongated shells increased ballistic coefficient 
+
+    and shortened time-of-flight, reducing wind sensitivity. 
+
+  </p> 
+
+  
+
+  <h3>Example</h3> 
+
+  <p> 
+
+    The introduction of rifled artillery in the mid-19th century, such as the Armstrong gun, significantly increased effective 
+
+    range and accuracy during conflicts like the Crimean War. Rifled guns could engage targets at distances that smoothbores 
+
+    could not reliably reach [2]. 
+
+  </p> 
+
+</div> 
+
+<div class="content-block" id="sec3"> 
+
+  <h2>3) High Explosives, Fuses, and Fragmentation</h2> 
+
+  
+
+  <!-- Simple explanation (NO title, placed BEFORE representative devices) --> 
+
+  <p> 
+
+    Before high explosives, lethality required direct impact. With explosive filling, lethality becomes spatial. 
+
+    Effectiveness depends on burst height, fragment velocity, fragment density, and lethal radius. 
+
+    Accuracy becomes probabilistic rather than purely geometric. 
+
+  </p> 
+
+  
+
+  <h3>Representative devices</h3> 
+
+  <ul> 
+
+    <li><b>Mills Bomb (No. 36 grenade, WWI).</b> Fragmentation grenade designed with a segmented casing. Demonstrates controlled fragment production and spatial lethality rather than precision impact.</li> 
+
+    <li><b>WWII artillery airburst shells.</b> Timed-fuze shells designed to detonate above ground, maximising fragment distribution across trenches or infantry formations.</li> 
+
+    <li><b>German S-mine (“Bouncing Betty”).</b> Anti-personnel mine that launched upward before detonating, optimising fragment spread at torso height.</li> 
+
+  </ul> 
+
+  
+
+  <h3>Fuse timing uncertainty</h3> 
+
+  <p> 
+
+    Timed fuses introduce their own uncertainty. If burst timing error is \(\Delta t\), then the burst height error is approximately: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      \Delta h \;\approx\; V\,\Delta t 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(\Delta h\) = burst height error</li> 
+
+    <li>\(V\) = shell vertical speed at burst (approx.)</li> 
+
+    <li>\(\Delta t\) = fuze timing error</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Height variation changes fragment density at ground level, so even explosive shells remain sensitive to timing precision. 
+
+  </p> 
+
+  
+
+  <h3>Deeper physics: Gurney velocity</h3> 
+
+  <p> 
+
+    A standard scaling for fragment velocity from an explosive casing is the Gurney model: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      V_f \;=\; \sqrt{2E \,\frac{M}{C+M}} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p>[7]</p> 
+
+  
+
+  <ul> 
+
+    <li>\(V_f\) = characteristic fragment velocity</li> 
+
+    <li>\(E\) = Gurney energy (explosive energy per unit mass, model parameter)</li> 
+
+    <li>\(M\) = explosive mass</li> 
+
+    <li>\(C\) = casing mass</li> 
+
+  </ul> 
+
+  
+
+  <p><b>Fragment kinetic energy</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      E_k \;=\; \tfrac{1}{2}\,m_f\,V_f^2 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(E_k\) = kinetic energy of a fragment</li> 
+
+    <li>\(m_f\) = fragment mass</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Energy scales quadratically with velocity, so modest changes in \(V_f\) can significantly change lethality. 
+
+  </p> 
+
+  
+
+  <h3>Fragment mass distribution</h3> 
+
+  <p> 
+
+    A commonly used empirical model for fragment mass distribution is the Mott distribution: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      N(m) \;=\; N_0 \exp\!\left(-\sqrt{\frac{m}{m_0}}\right) 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p>[8]</p> 
+
+  
+
+  <ul> 
+
+    <li>\(N(m)\) = expected number of fragments with mass \(\ge m\) (model-dependent convention)</li> 
+
+    <li>\(N_0\) = total-fragment scaling parameter</li> 
+
+    <li>\(m_0\) = characteristic fragment-mass parameter</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Fragment spatial density decreases approximately as an inverse-square spreading: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      n(r) \;\propto\; \frac{1}{r^2} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(n(r)\) = fragment areal density at radius \(r\)</li> 
+
+    <li>\(r\) = distance from burst point</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Lethal probability depends on both fragment velocity and areal density. This reframes “accuracy” as volumetric lethality: 
+
+    the question becomes “what fraction of a region receives sufficient energy deposition?” rather than “did we hit a point?” 
+
+  </p> 
+
+  
+
+  <h3>Section summary</h3> 
+
+  <p> 
+
+    High explosives transformed accuracy from a purely geometric concept to a spatial energy-distribution problem. 
+
+    Fragment velocity, fragment density, and burst height became as important as impact location. Lethality became 
+
+    probabilistic rather than point-based. 
+
+  </p> 
+
+  
+
+  <h3>Example</h3> 
+
+  <p> 
+
+    World War I and II artillery frequently used airburst shells to maximise fragment spread over trench systems. 
+
+    Even if a shell did not strike directly, the fragmentation cloud could cause significant casualties. Effectiveness 
+
+    depended on burst timing and fragment dispersion, not just impact coordinates [7][8]. 
+
+  </p> 
+
+</div> 
+
+<div class="content-block" id="sec4"> 
+
+  <h2>4) Unguided Aerial Bombing (WWII baseline)</h2> 
+
+  <p><b>Open-loop delivery and system-level uncertainty</b></p> 
+
+  
+
+  <!-- Simple explanation (NO title, placed BEFORE representative devices) --> 
+
+  <p> 
+
+    A bomb dropped from an aircraft is just another projectile, but one released at high altitude and high horizontal velocity. 
+
+    When the bomb leaves the aircraft, it already has the forward velocity of the aircraft, a specific release height, a specific 
+
+    release time, and a specific orientation. From that moment onward, its motion is entirely governed by gravity, aerodynamic drag, 
+
+    and atmospheric wind. There is no mechanism for correction after release. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    This makes the system <b>open-loop</b>. Open-loop means the bomb does not measure its own position or correct its trajectory: 
+
+    everything must be calculated correctly before it is dropped. In theory, if you know aircraft speed, aircraft altitude, air density, 
+
+    wind velocity profile, and drag coefficient, you can predict where the bomb will land. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    In practice, each of these quantities contains uncertainty: wind speed changes with altitude (wind shear), air density varies with 
+
+    temperature and pressure, aircraft pitch and roll introduce small release-angle deviations, the release mechanism has timing tolerances, 
+
+    and human operators must estimate and input environmental parameters. Because the bomb may fall for 20–40 seconds from high altitude, 
+
+    small errors accumulate over a long time-of-flight. Even a small crosswind estimation error can translate into hundreds of metres of 
+
+    lateral displacement. 
+
+  </p> 
+
+  
+
+  <h3>Representative devices</h3> 
+
+  <ul> 
+
+    <li><b>Mk 82 General Purpose Bomb (unguided).</b> A free-fall bomb relying entirely on aircraft release conditions and atmospheric modelling.</li> 
+
+    <li><b>British 500 lb and 1000 lb WWII bombs.</b> Used in strategic bombing campaigns. Their dispersion demonstrated open-loop sensitivity to wind and release error.</li> 
+
+    <li><b>V-1 Flying Bomb (pulsejet, unguided).</b> While powered, it lacked terminal guidance. Its accuracy was limited by navigation error and engine cutoff estimation.</li> 
+
+  </ul> 
+
+  
+
+  <h3>System-level uncertainty</h3> 
+
+  <p> 
+
+    WWII bombing revealed additional uncertainty sources: crosswind shear with altitude, density stratification, aircraft roll and yaw, 
+
+    bomb release timing lag, and human estimation. The USSBS reported only about <b>20%</b> of bombs fell within <b>1000 ft</b> of the aim point [9]. 
+
+    This is statistical evidence of open-loop fragility. 
+
+  </p> 
+
+  
+
+  <h3>Deeper physics</h3> 
+
+  
+
+  <p><b>Equation of motion with wind-relative drag (vector form)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      m\,\frac{d\mathbf{v}}{dt} 
+
+      \;=\; 
+
+      m\,\mathbf{g} 
+
+      \;-\; 
+
+      \frac{1}{2}\,\rho\,C_D\,A\, 
+
+      \left\lVert \mathbf{v}-\mathbf{v}_{\text{wind}} \right\rVert 
+
+      \left(\mathbf{v}-\mathbf{v}_{\text{wind}}\right) 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(m\) = bomb mass</li> 
+
+    <li>\(\mathbf{v}\) = bomb velocity vector</li> 
+
+    <li>\(\mathbf{g}\) = gravitational acceleration vector</li> 
+
+    <li>\(\rho\) = air density</li> 
+
+    <li>\(C_D\) = drag coefficient</li> 
+
+    <li>\(A\) = reference area</li> 
+
+    <li>\(\mathbf{v}_{\text{wind}}\) = wind velocity vector (generally altitude-dependent)</li> 
+
+    <li>\(\lVert \cdot \rVert\) = vector magnitude</li> 
+
+  </ul> 
+
+  
+
+  <p><b>Wind drift (cross-range displacement)</b></p> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      \Delta y 
+
+      \;=\; 
+
+      \int_{0}^{t_{\text{impact}}} 
+
+      v_{\text{wind}}\!\big(z(t),t\big)\,dt 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(\Delta y\) = cross-range drift</li> 
+
+    <li>\(t_{\text{impact}}\) = time of impact</li> 
+
+    <li>\(v_{\text{wind}}(z(t),t)\) = crosswind component as a function of altitude (and possibly time)</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    If the wind estimate has an error \(\delta w\) (crosswind component), then a first-order drift error scaling is: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      \delta y \;\approx\; t_{\text{flight}}\,\delta w 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(\delta y\) = cross-range miss due to wind estimation error</li> 
+
+    <li>\(t_{\text{flight}}\) = bomb time-of-flight</li> 
+
+    <li>\(\delta w\) = crosswind estimation error</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Time-of-flight multiplies uncertainty. Bombing demonstrates environmental sensitivity dominating mechanical precision. 
+
+  </p> 
+
+  
+
+  <h3>Section summary</h3> 
+
+  <p> 
+
+    Unguided bombing exposed the fragility of open-loop prediction in complex environments. Even with advanced bomb sights, 
+
+    atmospheric uncertainty, release timing, and aircraft motion produced large dispersion. 
+
+  </p> 
+
+  
+
+  <h3>Example</h3> 
+
+  <p> 
+
+    The United States Strategic Bombing Survey reported that during WWII, only about 20% of bombs fell within 1000 feet of the aiming 
+
+    point under operational conditions [9]. This empirical result demonstrated that environmental and human uncertainties dominated 
+
+    ballistic prediction. 
+
+  </p> 
+
+</div> 
+
+<div class="content-block" id="sec5"> 
+
+  <h2>5) Rockets and Ballistic Missiles</h2> 
+
+  <p><b>Powered flight, staging, and accumulating navigation error</b></p> 
+
+  
+
+  <!-- Simple explanation (NO title, placed BEFORE representative devices) --> 
+
+  <p> 
+
+    Rockets differ fundamentally from artillery and bombs because propulsion continues after launch. 
+
+    A cannon imparts velocity once, and the projectile coasts. A rocket, by contrast, accelerates for an extended 
+
+    period during powered flight. 
+
+  </p> 
+
+  
+
+  <p><b>This has two major consequences:</b></p> 
+
+  <ul> 
+
+    <li><b>Range increases dramatically.</b></li> 
+
+    <li><b>Errors accumulate during thrust.</b></li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    If the thrust direction is slightly misaligned, or if thrust magnitude varies slightly from expectation, the velocity 
+
+    error grows over the entire burn time. Because velocity determines future position, small early deviations can become 
+
+    large trajectory differences. Unlike artillery, where uncertainty is mostly “set” at launch, rockets remain dynamically 
+
+    sensitive while the engine is burning. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    This is a system-level change in where uncertainty enters. In a cannon, the main random variables are muzzle velocity, 
+
+    departure angle, and the external atmosphere. In a rocket, additional uncertainty enters continuously during flight: 
+
+    thrust magnitude and thrust direction are time-dependent, and the vehicle’s mass is changing as propellant is expended. 
+
+    Any mismatch between the assumed burn profile and the real burn profile accumulates into a trajectory deviation. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    Additionally, long-range rockets rely on inertial navigation systems. These systems measure acceleration and integrate 
+
+    it to determine velocity and position. But integration amplifies small sensor biases over time. A tiny accelerometer offset 
+
+    can grow into substantial position error after several minutes of flight. Historically, early ballistic missiles such as the 
+
+    V-2 demonstrated that powered flight allowed unprecedented range, but accuracy was limited by guidance precision rather than 
+
+    propulsion energy. 
+
+  </p> 
+
+  
+
+  <h3>Representative devices</h3> 
+
+  <ul> 
+
+    <li><b>V-2 Rocket (Germany, WWII).</b> First long-range ballistic missile. Demonstrated powered ascent followed by ballistic trajectory. Accuracy limited by inertial guidance precision.</li> 
+
+    <li><b>R-7 Semyorka (early ICBM).</b> Early Soviet intercontinental ballistic missile. Accuracy constrained by inertial navigation drift.</li> 
+
+    <li><b>Scud missile (Cold War era).</b> Short-range ballistic missile with significant circular error probable due to guidance limitations.</li> 
+
+  </ul> 
+
+  
+
+  <h3>Rocket equation</h3> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      \Delta v \;=\; v_e \,\ln\!\left(\frac{m_0}{m_f}\right) 
+
+    \] 
+
+  </div> 
+
+  <p>[10]</p> 
+
+  <ul> 
+
+    <li>\(\Delta v\) = total achievable change in velocity (“delta-v”)</li> 
+
+    <li>\(v_e\) = effective exhaust velocity</li> 
+
+    <li>\(m_0\) = initial mass (with propellant)</li> 
+
+    <li>\(m_f\) = final mass (after burn)</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Staging increases achievable \(\Delta v\) by repeatedly resetting \(m_0/m_f\): after each stage is exhausted and dropped, 
+
+    the remaining vehicle mass is reduced, enabling a new high mass ratio for the next burn. This is the engineering route to 
+
+    intercontinental range, but it also creates additional sensitivity: separation timing, stage ignition transients, and guidance 
+
+    handover between phases can all inject error. 
+
+  </p> 
+
+  
+
+  <h3>Powered ascent</h3> 
+
+  <div class="equation"> 
+
+    \[ 
+
+      m\,\frac{d\mathbf{v}}{dt} 
+
+      \;=\; 
+
+      \mathbf{T}(t) \;+\; m\,\mathbf{g} \;-\; \mathbf{D} 
+
+    \] 
+
+  </div> 
+
+  <ul> 
+
+    <li>\(\mathbf{T}(t)\) = thrust vector (time-dependent)</li> 
+
+    <li>\(\mathbf{D}\) = aerodynamic drag force vector</li> 
+
+    <li>\(\mathbf{g}\) = gravitational acceleration vector</li> 
+
+    <li>\(m\) = vehicle mass (decreasing during burn)</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    A small thrust-direction misalignment \(\Delta\theta\) produces a growing off-axis velocity error during burn because thrust 
+
+    acts for an extended time. A useful scaling is: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      \Delta v_{\perp} \;\approx\; \frac{1}{m}\int_{0}^{t_b} T(t)\,\sin(\Delta\theta)\,dt 
+
+      \;\approx\; 
+
+      \sin(\Delta\theta)\,\Delta v 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(\Delta v_{\perp}\) = lateral (off-axis) velocity error accumulated during burn</li> 
+
+    <li>\(t_b\) = burn time</li> 
+
+    <li>\(T(t)\) = thrust magnitude</li> 
+
+    <li>\(\Delta\theta\) = thrust-direction error</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    This matters because position error is roughly the time-integral of velocity error: an early \(\Delta v_{\perp}\) can map into a large 
+
+    miss distance by the time the vehicle reaches the ballistic phase. In other words, powered flight does not merely “add energy” — it adds a 
+
+    long window over which small directional errors can integrate into large trajectory divergence. 
+
+  </p> 
+
+  
+
+  <h3>Inertial navigation drift</h3> 
+
+  <p> 
+
+    Inertial systems estimate position by double integration of measured acceleration: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      x(t) 
+
+      \;=\; 
+
+      \int_{0}^{t}\left(\int_{0}^{\tau} a(\tau')\,d\tau'\right)d\tau 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p> 
+
+    If the accelerometer has a constant bias \(b\) (so \(a_{\text{meas}} = a_{\text{true}} + b\)), then the induced position error grows as: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      x_{\text{error}}(t) \;\approx\; \tfrac{1}{2}\,b\,t^2 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p> 
+
+    Error grows quadratically with time [11]. This is the key mechanism behind long-range missile dispersion: even when aerodynamics and propulsion 
+
+    are repeatable, guidance is an integration process, and integration turns small bias into large displacement. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    The consequence is that rockets shift dominant uncertainty away from muzzle variability and toward <i>navigation drift</i>, <i>burn profile mismatch</i>, 
+
+    and <i>attitude-control error</i>. In this regime, “better engineering” means better sensors, better calibration, better control authority, and better 
+
+    modelling of how thrust and mass evolve with time. 
+
+  </p> 
+
+  
+
+  <h3>Section summary</h3> 
+
+  <p> 
+
+    Rockets extend propulsion over time, greatly increasing range but allowing errors to accumulate during powered flight. Long-range missiles 
+
+    also depend on inertial navigation, where small sensor biases double-integrate into large position errors. The dominant uncertainty shifts 
+
+    from “what happened at launch” to “how errors grow during burn and integration.” 
+
+  </p> 
+
+  
+
+  <h3>Example</h3> 
+
+  <p> 
+
+    The German V-2 rocket demonstrated both the power and the limitation of early ballistic missiles. It achieved unprecedented range for its time 
+
+    (hundreds of kilometres) via powered ascent followed by ballistic flight, but operational accuracy was limited primarily by inertial guidance. 
+
+    Small gyroscope drift, thrust misalignment, and accelerometer bias accumulated over the multi-minute trajectory, producing kilometre-scale terminal 
+
+    dispersion under real conditions [10][11]. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    This same mechanism constrained early Cold War ballistic missiles. Systems such as the R-7 and Scud could deliver payloads over very large distances, 
+
+    but circular error probable remained large relative to modern standards. Even when propulsion performed nominally, small attitude-control and 
+
+    navigation-integration errors accumulated over burn time and flight time, making accuracy a guidance-and-sensor problem rather than an energy problem. 
+
+    The historical shift is clear: once you can reach the target, the dominant question becomes how well you can <i>measure</i> and <i>control</i> the state 
+
+    throughout flight. 
+
+  </p> 
+
+</div> 
+
+  
+
+<div class="content-block" id="sec6"> 
+
+  <h2>6) Precision-Guided Munitions</h2> 
+
+  <p><b>Feedback control is the true discontinuity</b></p> 
+
+  
+
+  <!-- Simple explanation (NO title, placed BEFORE representative devices) --> 
+
+  <p> 
+
+    Precision-guided munitions represent the fundamental shift in projectile physics: the introduction of feedback. 
+
+    Earlier systems—artillery, bombs, rockets—relied on prediction. Engineers calculated a trajectory, launched the projectile, 
+
+    and hoped that environmental conditions matched the model. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    Guided systems operate differently. They continuously measure their position, compare it to a desired target location, and apply 
+
+    corrective forces during flight. Small deviations caused by wind, drag variation, or release error are detected and reduced rather 
+
+    than allowed to grow. This closes the loop. 
+
+  </p> 
+
+  
+
+  <p> 
+
+    Instead of <b>predict → launch → hope</b>, the system becomes <b>measure → compare → correct → repeat</b>. 
+
+    Because corrections are applied in real time, sensitivity to disturbances is dramatically reduced. 
+
+    Wind no longer produces large drift if it can be compensated mid-flight. Release error is no longer final if control surfaces can adjust 
+
+    the trajectory. The defining change is not more power or better aerodynamics, but active error suppression. 
+
+  </p> 
+
+  
+
+  <h3>Representative devices</h3> 
+
+  <ul> 
+
+    <li><b>Paveway laser-guided bomb.</b> Uses laser designation and control fins to correct trajectory mid-flight. Demonstrates closed-loop correction.</li> 
+
+    <li><b>JDAM (Joint Direct Attack Munition).</b> GPS-guided bomb kit converting unguided bombs into precision weapons. Reduces wind and release sensitivity.</li> 
+
+    <li><b>AGM-114 Hellfire missile.</b> Laser-guided missile with active control surfaces for continuous trajectory correction.</li> 
+
+  </ul> 
+
+  
+
+  <h3>Deeper physics</h3> 
+
+  <p> 
+
+    The key difference between guided and unguided systems is the addition of a control force. 
+
+    Without guidance, motion is governed by external forces only: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      m\,\ddot{\mathbf{r}} \;=\; \mathbf{F}_{\text{ext}} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <p>With guidance:</p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      m\,\ddot{\mathbf{r}} \;=\; \mathbf{F}_{\text{ext}} \;+\; \mathbf{F}_{\text{control}} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(m\) = projectile mass</li> 
+
+    <li>\(\mathbf{r}\) = position vector</li> 
+
+    <li>\(\ddot{\mathbf{r}}\) = acceleration</li> 
+
+    <li>\(\mathbf{F}_{\text{ext}}\) = gravity, drag, wind, etc.</li> 
+
+    <li>\(\mathbf{F}_{\text{control}}\) = force from control fins, thrust vectoring, etc.</li> 
+
+  </ul> 
+
+  
+
+  <h3>Simple feedback control law</h3> 
+
+  <p> 
+
+    A minimal proportional–derivative (PD) control model for commanded control acceleration is: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      \mathbf{a}_{\text{control}} 
+
+      \;=\; 
+
+      k\,(\mathbf{r}_{\text{target}} - \mathbf{r}) \;-\; c\,\mathbf{v} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(\mathbf{a}_{\text{control}}\) = control acceleration command</li> 
+
+    <li>\(k\) = proportional gain</li> 
+
+    <li>\(c\) = damping coefficient</li> 
+
+    <li>\(\mathbf{r}\) = current position</li> 
+
+    <li>\(\mathbf{r}_{\text{target}}\) = desired target position</li> 
+
+    <li>\(\mathbf{v}=\dot{\mathbf{r}}\) = velocity</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    The first term pulls the projectile toward the target. The second term damps motion to prevent oscillation or overshoot. 
+
+  </p> 
+
+  
+
+  <h3>Closed-loop equation</h3> 
+
+  <p> 
+
+    Substituting control into the dynamics gives a standard closed-loop form (schematic): 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      m\,\ddot{\mathbf{r}} \;+\; c\,\dot{\mathbf{r}} \;+\; k\,\mathbf{r} 
+
+      \;=\; 
+
+      k\,\mathbf{r}_{\text{target}} \;+\; \mathbf{d}(t) 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(\mathbf{d}(t)\) = disturbances (wind, modelling error, etc.)</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    This equation shows that position error is actively driven toward zero rather than passively accumulating. 
+
+  </p> 
+
+  
+
+  <h3>Sensitivity reduction</h3> 
+
+  <p> 
+
+    Open-loop systems allow disturbances to accumulate over time. In closed-loop systems, sensitivity is reduced approximately as: 
+
+  </p> 
+
+  
+
+  <div class="equation"> 
+
+    \[ 
+
+      \text{sensitivity}_{\text{closed}} 
+
+      \;\approx\; 
+
+      \frac{\text{sensitivity}_{\textopen}}{1 + G_{\text{loop}}} 
+
+    \] 
+
+  </div> 
+
+  
+
+  <ul> 
+
+    <li>\(G_{\text{loop}}\) = loop gain (set by controller gain and system response)</li> 
+
+  </ul> 
+
+  
+
+  <p> 
+
+    Higher loop gain reduces disturbance amplification. 
+
+  </p> 
+
+  
+
+  <h3>Section summary</h3> 
+
+  <p> 
+
+    Precision-guided munitions introduced feedback control, fundamentally altering projectile physics. By continuously measuring position and 
+
+    correcting trajectory, guided systems actively suppress disturbance growth instead of merely predicting it. 
+
+  </p> 
+
+  
+
+  <h3>Example</h3> 
+
+  <p> 
+
+    Laser-guided bombs used in conflicts from the Vietnam War onward reduced circular error probable dramatically compared to unguided bombs. 
+
+    Wind and release variability were corrected mid-flight rather than passively endured. This represents the defining transformation: 
+
+    from open-loop ballistic prediction to closed-loop control. 
+
+  </p> 
+
+</div> 
+
+<!-- ======================= 
+
+     SIMULATION (HTML BLOCK) 
+
+     ======================= --> 
+
+<div class="content-block" id="simulation"> 
+
+  <h2>Interactive Simulation: Dispersion, Uncertainty, and Guidance</h2> 
+
+  
+
+  <p> 
+
+    This Monte Carlo model simulates <b>N</b> launches of a chosen “projectile era” and plots where they land relative to an intended target. 
+
+    Each shot includes uncertainty in <b>launch angle</b>, <b>muzzle speed</b>, and <b>wind</b>. The scatter plot shows the impact cloud, 
+
+    and the histogram shows the miss-distance distribution. The circles show <b>CEP50</b> and <b>CEP90</b> (radii containing 50% and 90% of impacts). 
+
+    Increasing <b>N</b> stabilises the statistics; changing <b>v0</b> changes range/time-of-flight and therefore how wind/drag uncertainty translates into miss distance. 
+
+    The “Modern guided” preset demonstrates <b>feedback control</b>: disturbances are actively corrected mid-flight instead of accumulating. 
+
+  </p> 
+
+  
+
+  <div class="content-block" style="background: rgba(2,6,23,0.55); margin-top:18px;"> 
+
+    <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:end;"> 
+
+      <div style="min-width:280px;"> 
+
+        <label style="color:#c7d2fe; font-weight:700; display:block; margin-bottom:6px;">Projectile</label> 
+
+        <select id="simProjectile" 
+
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid #1e293b; background:#020617; color:#e6ecff;"> 
+
+          <option value="Smoothbore (round shot)">Smoothbore (round shot)</option> 
+
+          <option value="Rifled shell">Rifled shell</option> 
+
+          <option value="WWII unguided bomb">WWII unguided bomb</option> 
+
+          <option value="Modern guided">Modern guided</option> 
+
+        </select> 
+
+      </div> 
+
+  
+
+      <div style="min-width:280px; flex:1;"> 
+
+        <label style="color:#c7d2fe; font-weight:700; display:flex; justify-content:space-between;"> 
+
+          <span>Shots N</span><span id="simNVal" style="color:#e0f2fe;">8000</span> 
+
+        </label> 
+
+        <input id="simN" type="range" min="500" max="30000" step="500" value="8000" 
+
+               style="width:100%; accent-color:#38bdf8;"> 
+
+      </div> 
+
+  
+
+      <div style="min-width:280px; flex:1;"> 
+
+        <label style="color:#c7d2fe; font-weight:700; display:flex; justify-content:space-between;"> 
+
+          <span>v0 (m/s)</span><span id="simV0Val" style="color:#e0f2fe;">250</span> 
+
+        </label> 
+
+        <input id="simV0" type="range" min="50" max="900" step="5" value="250" 
+
+               style="width:100%; accent-color:#38bdf8;"> 
+
+      </div> 
+
+  
+
+      <button id="simRun" 
+
+              style="padding:11px 14px; border-radius:12px; border:1px solid rgba(56,189,248,0.35); 
+
+                     background:rgba(56,189,248,0.12); color:#e6ecff; font-weight:800; cursor:pointer;"> 
+
+        Run / Update 
+
+      </button> 
+
+    </div> 
+
+  
+
+    <div id="simStatus" style="margin-top:12px; color:#c7d2fe;">Ready.</div> 
+
+  
+
+    <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:14px;"> 
+
+      <div style="flex:1; min-width:320px; border:1px solid #1e293b; border-radius:14px; overflow:hidden; background:#020617;"> 
+
+        <div id="simScatter" style="width:100%; height:420px;"></div> 
+
+      </div> 
+
+      <div style="width:380px; max-width:100%; border:1px solid #1e293b; border-radius:14px; overflow:hidden; background:#020617;"> 
+
+        <div id="simHist" style="width:100%; height:420px;"></div> 
+
+      </div> 
+
+    </div> 
+
+  </div> 
+
+</div> 
+
+  
+
+  
+
+<!-- ======================= 
+
+     SIMULATION (WRAPPED JS) 
+
+     Place this ONCE, right before </body> 
+
+     ======================= --> 
+
+<script> 
+
+window.addEventListener("load", () => { 
+
+  const statusEl = document.getElementById("simStatus"); 
+
+  const setStatus = (m) => { if (statusEl) statusEl.textContent = m; }; 
+
+  
+
+  // Must have Plotly 
+
+  if (typeof Plotly === "undefined") { 
+
+    setStatus("Plotly not loaded. Check the Plotly <script> tag is in <head> and you are online."); 
+
+    return; 
+
+  } 
+
+  
+
+  // Must have the DOM elements 
+
+  const elProjectile = document.getElementById("simProjectile"); 
+
+  const elN = document.getElementById("simN"); 
+
+  const elV0 = document.getElementById("simV0"); 
+
+  const elNVal = document.getElementById("simNVal"); 
+
+  const elV0Val = document.getElementById("simV0Val"); 
+
+  const elRun = document.getElementById("simRun"); 
+
+  
+
+  const elScatter = document.getElementById("simScatter"); 
+
+  const elHist = document.getElementById("simHist"); 
+
+  
+
+  if (!elProjectile || !elN || !elV0 || !elRun || !elScatter || !elHist) { 
+
+    setStatus("Simulation elements not found. Check IDs: simProjectile, simN, simV0, simRun, simScatter, simHist."); 
+
+    return; 
+
+  } 
+
+  
+
+  elN.addEventListener("input", () => (elNVal.textContent = elN.value)); 
+
+  elV0.addEventListener("input", () => (elV0Val.textContent = elV0.value)); 
+
+  
+
+  const G = 9.81; 
+
+  
+
+  const PRESETS = { 
+
+    "Smoothbore (round shot)": { k: 0.0022, guidance: false, sig_ang_deg: 0.90, sig_v_frac: 0.050, sig_w: 3.0 }, 
+
+    "Rifled shell":           { k: 0.0012, guidance: false, sig_ang_deg: 0.30, sig_v_frac: 0.015, sig_w: 1.3 }, 
+
+    "WWII unguided bomb":     { k: 0.0026, guidance: false, sig_ang_deg: 0.40, sig_v_frac: 0.012, sig_w: 2.2 }, 
+
+    "Modern guided":          { k: 0.0013, guidance: true,  sig_ang_deg: 0.25, sig_v_frac: 0.010, sig_w: 1.0 }, 
+
+  }; 
+
+  
+
+  // Seeded RNG (stable results) 
+
+  function mulberry32(seed) { 
+
+    let t = seed >>> 0; 
+
+    return function() { 
+
+      t += 0x6D2B79F5; 
+
+      let x = Math.imul(t ^ (t >>> 15), 1 | t); 
+
+      x ^= x + Math.imul(x ^ (x >>> 7), 61 | x); 
+
+      return ((x ^ (x >>> 14)) >>> 0) / 4294967296; 
+
+    }; 
+
+  } 
+
+  
+
+  // Box–Muller normal 
+
+  function randn(rng) { 
+
+    let u = 0, v = 0; 
+
+    while (u === 0) u = rng(); 
+
+    while (v === 0) v = rng(); 
+
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v); 
+
+  } 
+
+  
+
+  function quantile(sortedArr, q) { 
+
+    const n = sortedArr.length; 
+
+    const pos = (n - 1) * q; 
+
+    const base = Math.floor(pos); 
+
+    const rest = pos - base; 
+
+    return (base + 1 < n) ? sortedArr[base] + rest * (sortedArr[base + 1] - sortedArr[base]) : sortedArr[base]; 
+
+  } 
+
+  
+
+  function simulateImpacts(projectileType, N, v0, seed = 0, dt = 0.02, tmax = 220.0) { 
+
+    const p = PRESETS[projectileType]; 
+
+    const rng = mulberry32(seed); 
+
+  
+
+    const angle_deg = 35.0; 
+
+    const wind_mean = 10.0; 
+
+  
+
+    const th0 = angle_deg * Math.PI / 180.0; 
+
+    const Xt = (v0 * v0) * Math.sin(2 * th0) / G; 
+
+    const Yt = 0.0; 
+
+  
+
+    const th = new Float64Array(N); 
+
+    const v  = new Float64Array(N); 
+
+    const w  = new Float64Array(N); 
+
+  
+
+    for (let i = 0; i < N; i++) { 
+
+      th[i] = th0 + randn(rng) * (p.sig_ang_deg * Math.PI / 180.0); 
+
+      v[i]  = v0 * (1.0 + randn(rng) * p.sig_v_frac); 
+
+      w[i]  = wind_mean + randn(rng) * p.sig_w; 
+
+    } 
+
+  
+
+    const x = new Float64Array(N); 
+
+    const y = new Float64Array(N); 
+
+    const z = new Float64Array(N); 
+
+  
+
+    const vx = new Float64Array(N); 
+
+    const vy = new Float64Array(N); 
+
+    const vz = new Float64Array(N); 
+
+  
+
+    for (let i = 0; i < N; i++) { 
+
+      vx[i] = v[i] * Math.cos(th[i]); 
+
+      vz[i] = v[i] * Math.sin(th[i]); 
+
+      vy[i] = 0.0; 
+
+      x[i] = y[i] = z[i] = 0.0; 
+
+    } 
+
+  
+
+    const k = p.k; 
+
+    const guidance = p.guidance; 
+
+    const kp = 0.08, kd = 0.10, a_cap = 20.0; 
+
+  
+
+    const alive = new Uint8Array(N); 
+
+    alive.fill(1); 
+
+  
+
+    const steps = Math.floor(tmax / dt); 
+
+    let t = 0.0; 
+
+  
+
+    for (let step = 0; step < steps; step++) { 
+
+      let anyAlive = false; 
+
+  
+
+      for (let i = 0; i < N; i++) { 
+
+        if (!alive[i]) continue; 
+
+        anyAlive = true; 
+
+  
+
+        const vrelx = vx[i]; 
+
+        const vrely = (vy[i] - w[i]); 
+
+        const vrelz = vz[i]; 
+
+        const vmag = Math.sqrt(vrelx*vrelx + vrely*vrely + vrelz*vrelz) + 1e-12; 
+
+  
+
+        let ax = -k * vmag * vrelx; 
+
+        let ay = -k * vmag * vrely; 
+
+        let az = -k * vmag * vrelz - G; 
+
+  
+
+        if (guidance) { 
+
+          const ex = (Xt - x[i]); 
+
+          const ey = (Yt - y[i]); 
+
+          ax = Math.max(-a_cap, Math.min(a_cap, ax + kp*ex - kd*vx[i])); 
+
+          ay = Math.max(-a_cap, Math.min(a_cap, ay + kp*ey - kd*vy[i])); 
+
+        } 
+
+  
+
+        vx[i] += ax * dt; 
+
+        vy[i] += ay * dt; 
+
+        vz[i] += az * dt; 
+
+  
+
+        x[i]  += vx[i] * dt; 
+
+        y[i]  += vy[i] * dt; 
+
+        z[i]  += vz[i] * dt; 
+
+  
+
+        if (z[i] <= 0.0 && t > 0.1) { 
+
+          z[i] = 0.0; 
+
+          alive[i] = 0; 
+
+        } 
+
+      } 
+
+  
+
+      if (!anyAlive) break; 
+
+      t += dt; 
+
+    } 
+
+  
+
+    return { x, y, Xt, Yt }; 
+
+  } 
+
+  
+
+  function computeCEP(x, y, Xt, Yt, q) { 
+
+    const N = x.length; 
+
+    const r = new Array(N); 
+
+    for (let i = 0; i < N; i++) { 
+
+      const dx = x[i] - Xt; 
+
+      const dy = y[i] - Yt; 
+
+      r[i] = Math.sqrt(dx*dx + dy*dy); 
+
+    } 
+
+    r.sort((a,b) => a-b); 
+
+    return quantile(r, q); 
+
+  } 
+
+  
+
+  function circleXY(Xt, Yt, R, n=360) { 
+
+    const xs = new Array(n+1); 
+
+    const ys = new Array(n+1); 
+
+    for (let i = 0; i <= n; i++) { 
+
+      const th = (i / n) * 2*Math.PI; 
+
+      xs[i] = Xt + R*Math.cos(th); 
+
+      ys[i] = Yt + R*Math.sin(th); 
+
+    } 
+
+    return { xs, ys }; 
+
+  } 
+
+  
+
+  function histogram(data, bins=55) { 
+
+    let min = Infinity, max = -Infinity; 
+
+    for (const v of data) { if (v < min) min = v; if (v > max) max = v; } 
+
+    if (!isFinite(min) || !isFinite(max) || min === max) return { centers:[min], counts:[data.length] }; 
+
+  
+
+    const width = (max - min) / bins; 
+
+    const counts = new Array(bins).fill(0); 
+
+    for (const v of data) { 
+
+      let b = Math.floor((v - min) / width); 
+
+      if (b === bins) b = bins - 1; 
+
+      counts[b] += 1; 
+
+    } 
+
+    const centers = new Array(bins); 
+
+    for (let i = 0; i < bins; i++) centers[i] = min + (i + 0.5) * width; 
+
+    return { centers, counts }; 
+
+  } 
+
+  
+
+  async function run() { 
+
+    const projectileType = elProjectile.value; 
+
+    const N = parseInt(elN.value, 10); 
+
+    const v0 = parseFloat(elV0.value); 
+
+  
+
+    elRun.disabled = true; 
+
+    setStatus("Running simulation…"); 
+
+    await new Promise(requestAnimationFrame); 
+
+  
+
+    const { x, y, Xt, Yt } = simulateImpacts(projectileType, N, v0, 0); 
+
+  
+
+    const c50 = computeCEP(x, y, Xt, Yt, 0.50); 
+
+    const c90 = computeCEP(x, y, Xt, Yt, 0.90); 
+
+  
+
+    let sx = 0, sy = 0; 
+
+    for (let i = 0; i < N; i++) { sx += x[i]; sy += y[i]; } 
+
+    const mx = sx / N, my = sy / N; 
+
+  
+
+    const stride = Math.max(1, Math.floor(N / 6000)); 
+
+    const xs = [], ys = []; 
+
+    for (let i = 0; i < N; i += stride) { xs.push(x[i]); ys.push(y[i]); } 
+
+  
+
+    const C50 = circleXY(Xt, Yt, c50); 
+
+    const C90 = circleXY(Xt, Yt, c90); 
+
+  
+
+    const r = new Array(N); 
+
+    for (let i = 0; i < N; i++) { 
+
+      const dx = x[i] - Xt, dy = y[i] - Yt; 
+
+      r[i] = Math.sqrt(dx*dx + dy*dy); 
+
+    } 
+
+    const { centers, counts } = histogram(r, 55); 
+
+    const ymax = Math.max(...counts); 
+
+  
+
+    await Plotly.newPlot("simScatter", [ 
+
+      { x: xs, y: ys, mode: "markers", type: "scattergl", marker: { size: 4 }, opacity: 0.28, name: "Impacts" }, 
+
+      { x: [Xt], y: [Yt], mode: "markers", marker: { size: 14, symbol: "x" }, name: "Target" }, 
+
+      { x: [mx], y: [my], mode: "markers", marker: { size: 12, symbol: "circle-open", line: { width: 2 } }, name: "Mean" }, 
+
+      { x: C50.xs, y: C50.ys, mode: "lines", line: { width: 2 }, name: "CEP50" }, 
+
+      { x: C90.xs, y: C90.ys, mode: "lines", line: { width: 2 }, name: "CEP90" }, 
+
+    ], { 
+
+      paper_bgcolor: "rgba(0,0,0,0)", 
+
+      plot_bgcolor: "rgba(0,0,0,0)", 
+
+      margin: { l: 60, r: 20, t: 70, b: 55 }, 
+
+      title: `${projectileType}<br><span style="font-size:12px;">Target=✕ &nbsp;&nbsp; CEP50≈${c50.toFixed(1)} m &nbsp;&nbsp; CEP90≈${c90.toFixed(1)} m</span>`, 
+
+      xaxis: { title: "Downrange X (m)", gridcolor: "rgba(255,255,255,0.12)" }, 
+
+      yaxis: { title: "Crossrange Y (m)", gridcolor: "rgba(255,255,255,0.12)", scaleanchor: "x", scaleratio: 1 }, 
+
+      legend: { bgcolor: "rgba(2,6,23,0.55)", bordercolor: "rgba(255,255,255,0.12)", borderwidth: 1 } 
+
+    }, { responsive: true, displayModeBar: false }); 
+
+  
+
+    await Plotly.newPlot("simHist", [ 
+
+      { x: centers, y: counts, type: "bar", name: "Miss distance" }, 
+
+      { x: [c50, c50], y: [0, ymax], mode: "lines", type: "scatter", name: "CEP50", line: { width: 2 } }, 
+
+      { x: [c90, c90], y: [0, ymax], mode: "lines", type: "scatter", name: "CEP90", line: { width: 2 } }, 
+
+    ], { 
+
+      paper_bgcolor: "rgba(0,0,0,0)", 
+
+      plot_bgcolor: "rgba(0,0,0,0)", 
+
+      margin: { l: 60, r: 20, t: 70, b: 55 }, 
+
+      title: "Miss-distance distribution", 
+
+      xaxis: { title: "Distance from target (m)", gridcolor: "rgba(255,255,255,0.12)" }, 
+
+      yaxis: { title: "Count", gridcolor: "rgba(255,255,255,0.12)" }, 
+
+      legend: { bgcolor: "rgba(2,6,23,0.55)", bordercolor: "rgba(255,255,255,0.12)", borderwidth: 1 } 
+
+    }, { responsive: true, displayModeBar: false }); 
+
+  
+
+    setStatus(`Done. Showing ${xs.length} / ${N} impacts (subsampled).`); 
+
+    elRun.disabled = false; 
+
+  } 
+
+  
+
+  elRun.addEventListener("click", run); 
+
+  elProjectile.addEventListener("change", run); 
+
+  elN.addEventListener("change", run); 
+
+  elV0.addEventListener("change", run); 
+
+  
+
+  run(); 
+
+}); 
+
+</script> 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<div class="content-block" id="references"> 
+
+  <h2>References</h2> 
+
+  
+
+  <ol style="padding-left: 22px;"> 
+
+    <li>McCoy, R.L. (2012) <i>Modern Exterior Ballistics</i>. 2nd edn. Schiffer.</li> 
+
+    <li>Hogg, O.F.G. (1970) <i>Artillery: Its Origin, Heyday and Decline</i>. C. Hurst.</li> 
+
+    <li>Anderson, J.D. (2010) <i>Fundamentals of Aerodynamics</i>. 5th edn. McGraw-Hill.</li> 
+
+    <li>Ogata, K. (2010) <i>Modern Control Engineering</i>. 5th edn. Prentice Hall.</li> 
+
+    <li>Hogg, O.F.G. (1963) <i>English Artillery 1326–1716</i>. Arms &amp; Armour Press.</li> 
+
+    <li>Robins, B. (1742) <i>New Principles of Gunnery</i>. J. Nourse.</li> 
+
+    <li>Cooper, P.W. (1996) <i>Explosives Engineering</i>. Wiley-VCH.</li> 
+
+    <li>Mott, N.F. (1943) ‘Fragmentation of shell cases’, <i>Proceedings of the Royal Society A</i>.</li> 
+
+    <li>United States Strategic Bombing Survey (1945–47) <i>Summary Report (European War)</i>.</li> 
+
+    <li>Sutton, G.P. and Biblarz, O. (2017) <i>Rocket Propulsion Elements</i>. 9th edn. Wiley.</li> 
+
+    <li>Titterton, D.H. and Weston, J.L. (2004) <i>Strapdown Inertial Navigation Technology</i>. 2nd edn. IET.</li> 
+
+  </ol> 
+
+</div> 
+
+ 
