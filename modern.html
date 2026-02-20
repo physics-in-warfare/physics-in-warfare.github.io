@@ -281,7 +281,7 @@ img {
   <div class="content-block">
     <h2>Drone Warfare</h2>
     <p>
-      Pilotless vehicles were initially developed in the UK in the First World War and development continued         throughout the interwar period. They began to be used on a larger scale during the Vietnam War by the US as Reconnaissance UAVs (Unmanned Ariel Vehicles), but they were also used as combat decoys, for finding targets to launch missiles, and for dropping leaflets and posters for psychological propaganda [1]. Drones were used at an even greater scale in Afghanistan in the 2000s where they moved from taking a more surveillance focussed role, to an active combat role, as this was the era of the first known lethal drone strike [2]. Today, drones have been used in the Russia-Ukraine war, both as direct attacks on Ukrainian cities and as threatening surveillance in other countries in Europe including Germany and Norway, displaying how useful they are [3]. </p>
+      Pilotless vehicles were initially developed in the UK in the First World War and development continued         throughout the interwar period. They began to be used on a larger scale during the Vietnam War by the US as Reconnaissance UAVs (Unmanned Ariel Vehicles), but they were also used as combat decoys, for finding targets to launch missiles, and for dropping leaflets and posters for psychological propaganda [1]. Drones were used at an even greater scale in Afghanistan in the 2000s where they moved from taking a more surveillance focussed role, to an active combat role, as this was the era of the first known lethal drone strike [2]. Today, drones have been used in the Russo-Ukraine war, both as direct attacks on Ukrainian cities and as threatening surveillance in other countries in Europe including Germany and Norway, displaying how useful they are [3]. </p>
 <img src="GetImage.jpeg" alt="Military drone" width="600"> [4]
 <br>
 </div>
@@ -311,7 +311,7 @@ Weight: Downward force exerted by Earth's gravitational field. This means drones
 <br> 
 Military drones are often also made using lightweight materials, for example: 
 <br> 
- Carbon Fiber Reinforced Polymer (CFRP) - This is used for wings, airframes, propeller arms. It has a high strength to weight ratio and low density leading to an overall lower weight. It also has a high stiffness which reduces the amount of potential aerodynamic deformation while in flight. 
+ Carbon Fiber Reinforced Polymer (CFRP) - This is used for wings, airframes, and propeller arms. It has a high strength to weight ratio and low density leading to an overall lower weight. It also has a high stiffness which reduces the amount of potential aerodynamic deformation while in flight. 
 <br> 
  Fiberglass Composites – These are used for fuselages (the main body of drone, including electronics and flight systems) and radar covers. It is a lightweight material. It also allows EM radar waves to go straight through with little absorption or reflection so the drone is not easy to detect. 
 <br> 
@@ -358,7 +358,7 @@ engineering estimates.
 <p>
 Change velocity or air density to simulate different flight speeds or altitudes.
 Lower air density represents high-altitude flight.
-The MQ-9 Reaper operates at a maximum cruise velocity of 125 m/s and minimum air density 0.187 kg/m³ (at 50,000 ft) [9][10].
+The MQ-9 Reaper operates at a maximum cruise velocity of 125 m/s and minimum air density 0.187 kg/m³ (at 15200m) [9][10].
 </p>
 
 <label>Velocity v (m/s)</label>
@@ -440,17 +440,17 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
 
   </p>
   <p>
-    Lidar (Light Detection and Ranging): This is a very similar concept to Radar but uses laser pulses (infrared/visible light) rather than radiowave or microwave pulses. The background physics is also similar to that of Radar (pulses sent out, return time measured and distance calculated). However, Lidar is used more to make detailed, high resolution 3D maps, rather than work out the distance to objects. Military uses include terrain mapping, avoiding certain obstacles and urban reconnaissance. However, its limitations are that it is less effective in rain, fog, smoke and dust (due to these things blocking the light signals being blocked) and, because it is an active sensor (constantly sending out signals), it is more easily detected by the enemy than passive sensors. 
+    Lidar (Light Detection and Ranging): This is a very similar concept to Radar but uses laser pulses (infrared/visible light) rather than radiowave or microwave pulses. The background physics is also similar to that of Radar (pulses sent out, return time measured and distance calculated). However, Lidar is used more to make detailed, high resolution 3D maps, rather than work out the distance to objects. Military uses include terrain mapping, avoiding certain obstacles and urban reconnaissance. However, its limitations are that it is less effective in rain, fog, smoke and dust (due to them blocking the light signals) and, because it is an active sensor (constantly sending out signals), it is more easily detected by the enemy than passive sensors. 
   </p>
   <h3>Communication Systems</h3>
   <p>
     Military drones use radio-frequency (RF) electromagnetic waves to communicate with other drones, satellites and on-the-ground operators. This means they transmit information. The types of information include control commands (direction and speed), sensor data (video and radar), and status details (battery and potential damage). These commands use microwave EM radiation in the GHz frequency range. 
   </p>
   <p>
-    RF communication uses electromagnetic wave propagation (at speed of light). It uses wave modulation to carry certain signals 
+    RF communication uses electromagnetic wave propagation (at the speed of light) and wave modulation to carry certain signals. There are three types of modulation:
   </p>
   <p>
-    Amplitude Modulation (AM): Frequency and phase remain constant - only amplitude (strength of wave) changes. Stronger signal = larger oscillation peaks and weaker signal = smaller oscillation peaks. The variations of strength are what conveys the message. However AM is rarely used in a military setting because it is affected significantly by noise. The electric field for this signal is given by
+    Amplitude Modulation (AM): Frequency and phase remain constant - only amplitude (strength of wave) changes. Stronger signal = larger oscillation peaks, and weaker signal = smaller oscillation peaks. The variations of strength are what conveys the message. However AM is rarely used in a military setting because it is affected significantly by noise. The electric field for this signal is given by
   $$
     E(t) = [A + m(t)]sin(2 \pi f t)
     $$
@@ -474,7 +474,7 @@ $$
     There are numerous downsides to RF communication, however.  These include
   </p>
   <p>
-    Line of sight Limitations: Radio waves travel in straight lines and therefore do not bend around the curvature of the Earth's surface, nor obstacles. The horizon limitation is approximately calculated using the equation below. This means that low-flying drones are affected, as are ones used in urban settings, as they lose connection easily. The approximation for the horizon limit is given by
+    Line of sight Limitations: Radio waves travel in straight lines and therefore do not bend around the curvature of the Earth's surface, nor obstacles. This means that low-flying drones are affected, as are ones used in urban settings, as they lose connection easily. The approximation for the horizon limit is given by
     $$
     d \approx \sqrt{2Rh}
     $$
@@ -541,7 +541,7 @@ Semi-conductor / diode Lasers (medium: semiconductor junction): They pass electr
      
    </p>
        <p>
-The next part is stimulated emission, where the emitted photons with energy hf pass near an excited atom, which can stimulate the atom to drop in energy levels, emitting a second photon with exactly the same frequency and phase. These photons pass by more excited atoms, leading to more stimulated emission and even more photons. This creates an exponential amplification of light. Then, optical cavities, made up of one fully reflective and one partially reflective mirror, force the photons to bounce back and forth, which stimulates more emission and creates directionality and coherence in the laser beam. Only certain wavelengths of light can fit in the optical cavity. This leads to a monochromatic light beam with very low divergence. As the beam leaves the laser, it passes a partially reflective mirror, allowing only a small fraction of the light to escape. The light beam is, therefore, highly intense and coherent. Once the beam has left the laser it propagates as an electromagnetic wave, which transfers energy to the target via absorption. This causes the target to heat up  drastically, damaging it. 
+The next part is stimulated emission, where the emitted photons with energy $hf$ pass near an excited atom, which can stimulate the atom to drop in energy levels, emitting a second photon with exactly the same frequency and phase. These photons pass by more excited atoms, leading to more stimulated emission and even more photons. This creates an exponential amplification of light. Then, optical cavities, made up of one fully reflective and one partially reflective mirror, force the photons to bounce back and forth, which stimulates more emission and creates directionality and coherence in the laser beam. Only certain wavelengths of light can fit in the optical cavity. This leads to a monochromatic light beam with very low divergence. As the beam leaves the laser, it passes a partially reflective mirror, allowing only a small fraction of the light to escape. The light beam is, therefore, highly intense and coherent. Once the beam has left the laser it propagates as an electromagnetic wave, which transfers energy to the target via absorption. This causes the target to heat up  drastically, damaging it. 
        </p> 
 <p>
   Lasers are particularly useful because they travel at the speed of light, they can be focussed with high intensity and high precision on targets and have no ballistic drop, making aiming easy. They work particularly well against support weapons, such as drones and missiles. 
@@ -599,7 +599,7 @@ Divergence angle θ = <span id="thetaValue">0</span> rad
     <p>
       Cyber warfare involves using computer and electronic technology to attack information systems and disrupt or destroy the activities of another nation or organization, used when there is war or tension between two groups. This type of warfare was used to attack Iran's nuclear weapons in 2010, as well as in the Russo-Georgian war to disrupt control, and in the Russo-Ukraine war to attack the power grid [27][28][29]. Also, information warfare has been used by the People's Republic of China in order to control the nation through propaganda and media control, as well as to influence U.S. elections and decisions between Russia and Ukraine [30]. The types of cyber attacks fall into several main categories. 
   <br>
-      <img src="cyber1.avif" width="600"> [31]
+      <img src="cyber2.avif" width="600"> [31]
     </p>
     
   </div>
@@ -639,7 +639,7 @@ Divergence angle θ = <span id="thetaValue">0</span> rad
     $$
     where $\omega$ is the angular speed [19]. If demand exceeds the safe operating capacity of the generator, then the turbines slow, causing the frequency to drop. This can cause stress or excessive heating. 
     <br>
-    Generator Desynchronisation: If two generators that make up the grid fall out of phase, this creates a short circuit between the two voltage sources, leading to a high current to flow which could destroy the system. 
+    Generator Desynchronisation: If two generators that make up the grid fall out of phase, this creates a short circuit between the two voltage sources, leading to a high current flowing which could destroy the system. 
     <br>
     Thermal heating: If current becomes too high, power increases quadratically, which means that the cooling systems cannot always cope with this. It can cause some circuit components to melt or deform. 
 
@@ -818,7 +818,7 @@ Attacks on the electrical grid could cause major problems in society, including 
 
  
 
-[31] Beaumont, P. US appoints first cyber warfare general, The Guardian (2010) https://www.theguardian.com/world/2010/may/23/us-appoints-cyber-warfare-general (Accessed 12 February 2026). 
+[31] Tunnicliffe, A. International Collaboration on cyber warfare: an essential plan, but is it realistic? Army Technology (2019) https://www.army-technology.com/features/paris-call-cyberspace-realistic/ (Accessed 20 February 2026). 
 
 <br> 
 
@@ -941,6 +941,7 @@ drawLaser();
 
 
 </html> 
+
 
 
 
