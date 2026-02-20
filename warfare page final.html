@@ -1,0 +1,538 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Medieval Warfare | Physics in Warfare</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+
+  <style> 
+    body { 
+      margin: 0; 
+      font-family: 'Roboto', sans-serif; 
+      background: linear-gradient(135deg, #0a0f1f, #121a33); 
+      color: #e6ecff; 
+      line-height: 1.7; 
+    } 
+ 
+    h1, h2, h3 { 
+      font-family: 'Orbitron', sans-serif; 
+      color: #7dd3fc; 
+    } 
+ 
+    section { 
+      padding: 60px 12%; 
+    } 
+ 
+    nav { 
+      background: rgba(10,15,31,0.95); 
+      padding: 15px 12%; 
+      border-bottom: 1px solid #1e293b; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000;
+    } 
+ 
+    nav a { 
+      color: #38bdf8; 
+      text-decoration: none; 
+      font-weight: bold; 
+    } 
+ 
+    .content-block { 
+      background: #020617; 
+      border: 1px solid #1e293b; 
+      border-radius: 15px; 
+      padding: 30px; 
+      margin-bottom: 40px; 
+      box-shadow: 0 0 20px rgba(56,189,248,0.1); 
+    } 
+ 
+    .meta { 
+      font-size: 0.9rem; 
+      color: #c7d2fe; 
+      margin-bottom: 20px; 
+    } 
+ 
+    .equation { 
+      background: #020617; 
+      border-left: 4px solid #38bdf8; 
+      padding: 15px 20px; 
+      margin: 20px 0; 
+      font-family: 'Courier New', Courier, monospace; 
+      color: #e0f2fe; 
+      font-size: 1.1rem;
+    } 
+ 
+    ul, ol { 
+      margin-left: 20px; 
+    } 
+    
+    .ref-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    .ref-list li {
+      margin-bottom: 15px;
+    }
+ 
+    footer { 
+      background: #020617; 
+      padding: 25px; 
+      text-align: center; 
+      border-top: 1px solid #1e293b; 
+      font-size: 0.9rem; 
+    } 
+ 
+    @media (max-width: 768px) { 
+      section { 
+        padding: 40px 6%; 
+      } 
+    } 
+  </style> 
+</head> 
+<body> 
+ 
+<nav> 
+  <h2>Physics in Warfare</h2> 
+  <a href="index.html">← Back to Home</a> 
+</nav> 
+ 
+<section> 
+ 
+  <h1>The Mechanics of the Middle Ages: Classical Physics on the Battlefield</h1> 
+ 
+  <div class="meta"> 
+    <p>18 February 2026 | 17:05</p> 
+  </div> 
+ 
+  <div class="content-block"> 
+    <h2>Introduction</h2> 
+    <p> 
+      The medieval period, also known as the middle ages, spanned roughly a thousand years from the fall of the Western Roman Empire in the 5th century to the dawn of the Renaissance in the late 15th century. Contrary to its common perception as a dark period in history, this era came as a millennium of rapid mechanical evolution. The Early Middle Ages carried on the concepts of Roman fortifications and basic infantry tactics, which were improved upon drastically in the High Middle Ages. This period saw a revolution in defensive masonry and the construction of imposing, near-indestructible fortresses and castles, and the perfection of torsion-powered catapults. By the Late Middle Ages, the development of the counterweight trebuchet and the refinement of plate armour saw the height of mechanical, structural and material physics applications, heralding the beginning of the age of chemical propellants. 
+    </p> 
+  </div> 
+ 
+  <div class="content-block"> 
+    <h2>1. The Mechanics of Momentum and Impact (c. 500 – 1000)</h2> 
+ 
+    <p>The Early Middle Ages was defined by a transition from Roman military tactics to the rise of feudal heavy cavalry. The physics of this period focused on the efficient transfer of energy through direct impact and simple mechanisms.</p>
+
+    <h3>The Mounted Knight and Linear Momentum</h3> 
+
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="knight_momentum.png" alt="Physics of a Joust" style="max-width: 100%; border-radius: 10px; border: 1px solid #1e293b;">
+      <p style="font-size: 0.8rem; color: #c7d2fe; margin-top: 10px;">
+        Source: <a href="https://www.medievalart.org/icmacommunitynews/festivals-of-war-and-peace-the-evolution-of-jousts-and-tournaments-tobias-capwell-the-j-paul-getty-museum-25-june-2023-11-am-pdt2-pm-est-zoom" target="_blank" style="color: #38bdf8;">medievalart.org</a>
+      </p>
+    </div>
+    <p> 
+      The introduction of the stirrup around the year 800 [1] allowed a rider to deliver powerful strikes to opponents by channeling the linear momentum ($p$) of a charging horse through a lance tip, where 
+    </p> 
+ 
+    <div class="equation"> 
+      $p = mv$ [2] 
+    </div> 
+ 
+    <p> 
+      relates the combined mass $m$ of the horse and rider and the velocity of the gallop $v$. The force delivered by the lance strike is then given as: 
+    </p>
+
+    <div class="equation"> 
+      $F = \frac{dp}{dt}$ [3] 
+    </div> 
+
+    <p> 
+      where $dp/dt$ is the rate of change of momentum of the horse and rider. A combined mass of over 700kg moving at up to 30km/h could subsequently deliver forces in excess of 150,000 Newtons, enough to take out any infantry caught by the strike. 
+    </p>
+ 
+    <h3>Siege Tactics and Inertia</h3> 
+
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="battering_ram.png" alt="Physics of a Battering Ram" style="max-width: 40%; border-radius: 10px; border: 1px solid #1e293b;">
+      <p style="font-size: 0.8rem; color: #c7d2fe; margin-top: 10px;">
+        Source: <a href="https://etc.usf.edu/clipart/14900/14943/battram_14943.htm" target="_blank" style="color: #38bdf8;">etc.usf.edu</a>
+      </p>
+    </div>
+    <p> 
+      Early siege engines such as the mangonel utilised torsion mechanisms to store elastic potential energy ($EPE$) by winding ropes to draw back a sling, and then releasing all the tension to convert it into the potential energy of a projectile. Battering rams utilised the principle of inertia to break through sturdy wooden and metal gates, where Newton's second law, 
+    </p> 
+ 
+    <div class="equation"> 
+      $F = ma$ [4] 
+    </div> 
+ 
+    <p> 
+      relates the large mass $m$ of the ram and its acceleration $a$ as it is swung forwards. By maximising $m$ it was possible to deliver powerful impact forces. 
+    </p>
+
+    <h3>Friction on the Battlefield</h3> 
+    <p> 
+      The Battle of Tours (~732 AD) [5] demonstrated how environmental physics, specifically friction, could neutralise heavy infantry. Muddy, uneven terrain increases the coefficient of kinetic friction $\mu_k$ in the equation 
+    </p> 
+ 
+    <div class="equation"> 
+      $F = \mu_k N$ [6] 
+    </div> 
+ 
+    <p> 
+      where $N$ is the normal force acting on the soldier, the reaction force to their weight acting downwards. Considering the already increased weight of an armoured knight, increasing the coefficient of friction meant knights had to overcome large frictional forces simply to advance through the battlefield. 
+    </p>
+  </div> 
+ 
+  <div class="content-block"> 
+    <h2>2. Tension, Work, and Stored Energy (c. 1066 – 1215)</h2> 
+ 
+    <p>As fortifications and defenses grew stronger, missile ballistics evolved to maximise the energy stored in the weapon itself before release.</p>
+
+    <h3>The Ballistics of Bows</h3> 
+    <p> 
+      The Work-Energy principle was central in the rivalry between the longbow and the crossbow. It relates the work done ($W$) by a system to the force ($F$) and displacement ($d$) by 
+    </p> 
+ 
+    <div class="equation"> 
+      $W = F \cdot d$ [7] 
+    </div> 
+ 
+    <p> 
+      The longbow maximised draw length using light, flexible yew wood, a naturally composite material. The outer sapwood is flexible enough to handle high tension, whilst the inner heartwood handles compression of the bow. By contrast, the crossbow used mechanical devices to pull back the drawstring, maximising the draw weight ($F$) over a much shorter draw length. 
+    </p> 
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="bow_graph.png" alt="Force-Draw Curves for a Longbow vs. a Crossbow" style="max-width: 50%; border-radius: 10px; border: 1px solid #1e293b;">
+      <p style="font-size: 0.8rem; color: #c7d2fe; margin-top: 15px; text-align: center; padding: 0 10px;">
+        <strong>Force-Draw Curves for a Longbow vs. a Crossbow.</strong> Shaded areas indicate stored potential energy in Joules. The crossbow exerts higher peak force, but the longbow’s superior draw length allows it to store comparable energy for a much lower force exerted. The greater brace height of the longbow ensures that the string remains under tension even before a force is applied. Benchmarks derived from warbow archaeological data [18] and windlass-panned reconstructions [19].
+      </p>
+    </div>
+ 
+    <h3>Potential Energy and High Ground</h3> 
+    <p> 
+      At the Battle of Hastings (1066) [8], the use of high ground offered a distinct advantage in Gravitational Potential Energy, where 
+    </p> 
+ 
+    <div class="equation"> 
+      $GPE = mgh$ [9] 
+    </div> 
+ 
+    <p> 
+      Projectiles fired from an elevation $h$ gain kinetic energy as they descend, increasing their terminal velocity compared to those fired from ground level. 
+    </p> 
+
+    <h3>Structural Equilibrium</h3> 
+    <p> 
+      In 1215 at the Siege of Rochester [10], engineers utilised a technique known as undermining to collapse castle towers. By removing stone from load-bearing walls, they shifted the centre of gravity of the structure, disrupting its static equilibrium and causing it to come crashing down, causing chaos within the castle and allowing the attacking troops to charge in. 
+    </p> 
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="castle_breach.png" alt="Structural breach of a castle wall via undermining" style="max-width: 95%; height: auto; border-radius: 10px; border: 1px solid #1e293b;">
+      <p style="font-size: 0.8rem; color: #c7d2fe; margin-top: 10px; text-align: center;">
+        Source: <a href="https://www.midi-france.info/medievalwarfare/pics/breach.gif" target="_blank" style="color: #38bdf8;">midi-france.info</a>
+      </p>
+    </div>
+  </div> 
+
+ 
+  <div class="content-block"> 
+    <h2>3. Gravitational Potential and Structural Engineering (c.1180 - 1415)</h2> 
+ 
+    <p>This period in the High Middle Ages represents the apex of mechanical siege warfare and defensive masonry, as the former was forced to evolve in response to developments in the latter.</p>
+
+    <h3>The Counterweight Trebuchet</h3> 
+    <p> 
+      Introduced around the year 1180 [11], this engine was a powerful machine that masterfully converted the $GPE$ of a falling counterweight into Rotational Kinetic Energy. 
+    </p> 
+ 
+    <div class="equation"> 
+      $K = \frac{1}{2} I\omega^2$ [12] 
+    </div> 
+    
+    <p> 
+      describes the relation between the moment of inertia $I$ and the angular velocity $\omega$. With counterweights weighing in the region of 10 to 30 tons, an immense amount of energy could be transferred to the stone projectiles, annihilating any infantry or defenses caught in the blast. The addition of a sling at the end of the long lever arm creates a second pivot point, allowing the projectile to travel in a larger arc than that afforded by the arm itself. Since the release velocity is defined by 
+    </p> 
+ 
+    <div class="equation"> 
+      $v = \omega r$ [13] 
+    </div> 
+ 
+    <p> 
+      where $r$ is the radius from the main pivot point to the projectile, the increased effective radius released the projectiles with even greater velocity. 
+    </p>
+
+    <div style="margin: 40px auto; max-width: 850px; border: 2px solid #38bdf8; border-radius: 12px; background: #1e293b; padding: 25px; box-shadow: 0 0 25px rgba(56,189,248,0.2);">
+      <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+        <a href="javascript:void(0);" onclick="launchTrebuchetSim()" style="background: #228B22; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; font-family: sans-serif; transition: background 0.2s;">
+          Open Interactive Trajectory Model ↗
+        </a>
+      </div>
+      
+      <p style="font-size: 0.9rem; color: #c7d2fe; margin: 0; line-height: 1.5; border-top: 1px solid #334155; padding-top: 15px;">
+        <strong>Trebuchet Simulation.</strong> This model utilises the principle of conservation of energy to determine the launch velocity $v$ based on the potential energy of the falling counterweight minus mechanical friction and pivot losses. The trajectory follows Newtonian kinematics, terminating at ground level ($y = 0$). Projectile mass and payloads reflect historical siege accounts of psychological and chemical warfare.
+      </p>
+    </div>
+
+    <script>
+    function launchTrebuchetSim() {
+      const simWindow = window.open("", "_blank", "width=1000,height=900");
+      const simCode = `<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Trebuchet Simulation Lab</title> 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"><\/script> 
+    <style> 
+        body { font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; background: #fdfdfd; padding: 20px; } 
+        .controls { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 850px; border: 1px solid #eee; margin-top: 20px;} 
+        .slider-group { margin: 15px 0; display: flex; align-items: center; gap: 10px; } 
+        label { width: 180px; font-weight: 600; } 
+        .limit-label, .val-display { width: 85px; font-weight: bold; font-family: 'Segoe UI', sans-serif; font-size: 0.95em; } 
+        .limit-label { color: #888; text-align: right; } 
+        .val-display { color: #228B22; text-align: left; } 
+        input { flex-grow: 1; cursor: pointer; } 
+        .projectile-grid { display: flex; gap: 10px; margin: 20px 0; justify-content: center; } 
+        .ammo-btn { padding: 10px; border: 2px solid #ddd; border-radius: 8px; background: white; cursor: pointer; font-weight: bold; transition: 0.2s; flex: 1; font-size: 0.85em; } 
+        .ammo-btn.active { border-color: #228B22; background: #e8f5e9; color: #228B22; } 
+        .btn-container { display: flex; gap: 10px; margin-top: 20px; } 
+        button.action-btn { flex: 1; padding: 15px; border: none; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer; } 
+        .fire-btn { background: #228B22; color: white; } 
+        .reset-btn { background: #e0e0e0; color: #333; } 
+        .hud { display: flex; gap: 30px; margin-top: 20px; background: #333; color: white; padding: 10px 30px; border-radius: 50px; } 
+        .hud-val { font-size: 1.2em; font-weight: bold; color: #FFD700; } 
+        #message { height: 30px; margin-top: 15px; font-weight: bold; font-size: 1.2em; } 
+    </style> 
+</head> 
+<body> 
+    <h2 style="margin-top:30px;">Trebuchet Simulation Lab</h2> 
+    <div class="hud"> 
+        <div class="hud-item">SHOTS <span id="shot-count" class="hud-val">0</span></div> 
+        <div class="hud-item">WALL HP <span id="wall-hp" class="hud-val">100%</span></div> 
+        <div class="hud-item">TOTAL HITS <span id="hit-count" class="hud-val">0</span></div> 
+        <div class="hud-item">RANGE <span id="target-range" class="hud-val">0m</span></div> 
+    </div> 
+    <div id="message">Select ammo and fire at the wall!</div> 
+    <div id="plot" style="width: 900px; height: 450px;"></div> 
+    <div class="controls"> 
+        <div class="projectile-grid"> 
+            <button class="ammo-btn active" onclick="setAmmo('Stone', 100, 'forestgreen', 25)">Stone Shot (100kg)</button> 
+            <button class="ammo-btn" onclick="setAmmo('Lead', 40, '#2b580c', 15)">Lead Bolt (40kg)</button> 
+            <button class="ammo-btn" onclick="setAmmo('Fire', 60, '#d32f2f', 40)">Greek Fire (60kg)</button> 
+            <button class="ammo-btn" onclick="setAmmo('Carcass', 350, '#5d4037', 60)">Dead Cow (350kg)</button> 
+        </div> 
+        <div class="slider-group"> 
+            <label>Counterweight:</label> 
+            <span class="limit-label">2,000 kg</span> 
+            <input type="range" id="m_cw" min="2000" max="20000" value="10000" step="500"> 
+            <span class="val-display" id="cw_val">10,000 kg</span> 
+        </div> 
+        <div class="slider-group"> 
+            <label>Release Angle:</label> 
+            <span class="limit-label">5°</span> 
+            <input type="range" id="angle" min="5" max="90" value="45"> 
+            <span class="val-display" id="ang_val">45°</span> 
+        </div> 
+        <div class="btn-container"> 
+            <button class="action-btn fire-btn" onclick="launch()">FIRE!</button> 
+            <button class="action-btn reset-btn" onclick="clearBoard(true)">RESET SIEGE</button> 
+        </div> 
+    </div> 
+    <script> 
+        let history = []; let maxReachedX = 550; let targetX = 200; let wallHealth = 100; let shotsFired = 0; let totalHits = 0; 
+        let currentAmmo = { name: "Stone", mass: 100, color: "forestgreen", damage: 25 }; 
+        const targetWidth = 12; const targetHeight = 35; const plotDiv = document.getElementById('plot'); 
+        function setAmmo(name, mass, color, damage) { 
+            currentAmmo = { name, mass, color, damage }; 
+            document.querySelectorAll('.ammo-btn').forEach(btn => { btn.classList.toggle('active', btn.innerText.includes(name)); }); 
+            document.getElementById('message').innerText = name + " loaded. Ready for impact."; 
+        } 
+        function getLayout() { 
+            let wallColor = \`rgb(\${70 + (100-wallHealth)*1.8}, \${70 - (100-wallHealth)*0.7}, \${70 - (100-wallHealth)*0.7})\`; 
+            let shapes = []; if (wallHealth > 0) { shapes.push({ type: 'rect', x0: targetX, x1: targetX + targetWidth, y0: 0, y1: targetHeight, fillcolor: wallColor, line: { color: '#333', width: 2 } }); } 
+            return { xaxis: { title: 'Distance (m)', range: [-10, Math.max(maxReachedX, targetX + 50)], gridcolor: '#eee' }, yaxis: { title: 'Height (m)', range: [0, 150], gridcolor: '#eee' }, showlegend: false, margin: { t: 40 }, shapes: shapes }; 
+        } 
+        function clearBoard(manualReset = false) { 
+            history = []; maxReachedX = 550; wallHealth = 100; targetX = Math.floor(Math.random() * 380) + 120; 
+            if (manualReset) { shotsFired = 0; totalHits = 0; } 
+            updateHUD(); 
+            document.getElementById('message').innerText = "New target spotted at " + targetX + "m!"; 
+            document.getElementById('message').style.color = "#444"; 
+            Plotly.newPlot(plotDiv, [], getLayout()); 
+        } 
+        function updateHUD() { 
+            document.getElementById('shot-count').innerText = shotsFired; 
+            document.getElementById('hit-count').innerText = totalHits; 
+            document.getElementById('wall-hp').innerText = wallHealth + "%"; 
+            document.getElementById('target-range').innerText = targetX + "m"; 
+        } 
+        document.getElementById('m_cw').oninput = function() { document.getElementById('cw_val').innerText = Number(this.value).toLocaleString() + " kg"; }; 
+        document.getElementById('angle').oninput = function() { document.getElementById('ang_val').innerText = this.value + "°"; }; 
+        function launch() { 
+            if (wallHealth <= 0) { clearBoard(); return; } 
+            shotsFired++; const M = +document.getElementById('m_cw').value; const m = currentAmmo.mass; const ang = +document.getElementById('angle').value; 
+            const g = 9.81, L_short = 3, L_long = 12, eff = 0.7; const v = Math.sqrt((2 * M * g * L_short * eff) / m); const rad = ang * Math.PI / 180; 
+            let xFull = [], yFull = []; let hit = false; 
+            for (let t = 0; t < 60; t += 0.05) { 
+                let cx = (v * Math.cos(rad)) * t; let cy = (L_long + 8) + (v * Math.sin(rad)) * t - (0.5 * g * t**2); 
+                if (wallHealth > 0 && cx >= targetX && cx <= (targetX + targetWidth) && cy <= targetHeight && cy >= 0) { hit = true; xFull.push(cx); yFull.push(cy); break; } 
+                if (cy <= 0) { xFull.push(cx); yFull.push(0); break; } xFull.push(cx); yFull.push(cy); 
+            } 
+            const impactX = xFull[xFull.length - 1]; if (impactX > maxReachedX) maxReachedX = impactX; 
+            const msg = document.getElementById('message'); 
+            if (hit) { 
+                totalHits++; wallHealth = Math.max(0, wallHealth - currentAmmo.damage); 
+                msg.innerText = "IMPACT! Dealt " + currentAmmo.damage + " damage!"; 
+                msg.style.color = "#228B22"; 
+                if (wallHealth <= 0) { msg.innerText = "WALL DESTROYED! Fire again for next target."; msg.style.color = "#FFD700"; } 
+            } else { msg.innerText = impactX < targetX ? "SHORT!" : "OVER!"; msg.style.color = "#d32f2f"; } 
+            updateHUD(); 
+            const newTrace = { x: xFull, y: yFull, mode: 'lines', line: { color: hit ? '#FFD700' : currentAmmo.color, width: 3, shape: 'spline' }, fill: 'tozeroy', fillcolor: hit ? 'rgba(255, 215, 0, 0.2)' : 'rgba(0,0,0,0.05)' }; 
+            history.forEach(t => { t.line = { color: 'rgba(180, 180, 180, 0.2)', width: 1.5, shape: 'spline' }; t.fillcolor = 'transparent'; }); 
+            history.push(newTrace); 
+            Plotly.react(plotDiv, history, getLayout()); 
+        } 
+        clearBoard(true); 
+    <\/script> 
+</body> 
+</html>`;
+      simWindow.document.write(simCode);
+      simWindow.document.close();
+    }
+    </script>
+
+    <h3>Compression and Tension in Castle Masonry</h3> 
+    <p> 
+      Castle designs evolved from square structures with sharp corners to rounded towers because stone is incredibly strong under compression but weak under tension, thanks to the densely packed atoms that resist being squeezed but are prone to propagating cracks and snapping. By designing rounded castle walls, impact forces were distributed across the entire structure rather than onto a single weak corner where tension would cause the stone to crack and the wall to fall. These concentric castle designs are demonstrated particularly well in the likes of Château Gaillard [14], considered a masterpiece of its time. 
+    </p> 
+    
+    <div style="margin: 30px auto; max-width: 900px;">
+        <table style="width: 100%; border-collapse: collapse; background: #1e293b; color: #f8fafc; font-family: sans-serif; border: 1px solid #334155;">
+            <thead>
+                <tr style="background: #0f172a; border-bottom: 2px solid #38bdf8;">
+                    <th style="padding: 12px; text-align: left; border: 1px solid #334155;">Stone Type</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #334155;">Compressive Strength $\sigma_c$ (MPa)</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #334155;">Tensile Strength $\sigma_t$ (MPa)</th>
+                    <th style="padding: 12px; text-align: left; border: 1px solid #334155;">Primary Historical Use</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px; border: 1px solid #334155; font-weight: bold;">Granite</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">150 – 250</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">7 - 25</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">Foundations, Plinths, High-impact zones</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px; border: 1px solid #334155; font-weight: bold;">Limestone</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">30 - 120</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">2 - 8</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">General Curtain Walls, Ashlar blocks</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px; border: 1px solid #334155; font-weight: bold;">Sandstone</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">20 - 100</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">1 - 5</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">Decorative work, secondary walls</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #334155;">
+                    <td style="padding: 10px; border: 1px solid #334155; font-weight: bold;">Chalk</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">5 - 20</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">&lt;1</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">Core filling, early motte-and-bailey</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #334155; font-weight: bold;">Flint</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">400 - 600</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">30 - 50</td>
+                    <td style="padding: 10px; border: 1px solid #334155;">Facing/Knapped flint (extremely brittle)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p style="font-size: 0.9rem; color: #c7d2fe; margin-top: 15px; text-align: center; line-height: 1.5;">
+            <strong>Table comparing compressive and tensile strengths of common masonry stones.</strong> This table lists the literature values of the compressive and tensile strengths of some of the most common stones used in the construction of castles and their uses [25, 26, 27]. Note that the compressive strength for all natural stones is much greater than tensile strength, which is why castles excelled at supporting their own weight but were vulnerable to undermining and the propagation of cracks from heavy impacts.
+        </p>
+    </div>
+  </div> 
+ 
+  <div class="content-block"> 
+    <h2>4. Terminal Ballistics and the Dawn of Chemical Propellants (c. 1326 – 1500)</h2> 
+ 
+    <h3>Pressure and Penetration</h3> 
+    <p> 
+      To defeat the more advanced white plate armour [15] of the Late Middle Ages, weapons had to maximise their applied pressure ($P$). A sword slash distributes its force ($F$) over a relatively large area ($A$), resulting in low pressure. By comparison, a bodkin arrow, spear point or lance concentrates that same force into a significantly smaller area, creating the high pressure necessary to pierce steel. 
+    </p> 
+ 
+    <div class="equation"> 
+      $P = \frac{F}{A}$ [16] 
+    </div> 
+
+    <div style="margin: 30px auto; max-width: 900px; text-align: center;">
+        <img src="fitted_pressure_peaks.png" alt="3D Pressure Distribution Model" style="width: 80%; height: auto; border-radius: 8px; border: 1px solid #334155; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+        
+            <p style="font-size: 0.8rem; color: #c7d2fe; margin-top: 15px; text-align: center; padding: 0 10px;">
+                <strong>Pressure Distribution of Edged vs. Pointed Weapons.</strong> This model illustrates the concentration of a 500N force across a portion of a sword blade and the point of an arrow respectively. For the sword (left), force is distributed along a 50mm linear edge, resulting in a broad pressure ridge [20, 23]. Conversely, the bodkin arrow (right) focuses the identical force into a point-impact ($r = 0.1$mm), creating a pressure spike that enables it to penetrate armour by exceeding the material's yield strength [21, 24].
+            </p>
+       
+    </div>
+ 
+    <h3>Inertia and Blunt Force</h3> 
+    <p> 
+      When plate armour became too thick to pierce with conventional weapons, soldiers turned to maces and war hammers. These weapons utilised inertia and the transfer of momentum to deliver kinetic energy through the armour straight to the target. Even if the armour did not break, the energy was transmitted to the wearer's body, causing internal trauma without needing to penetrate the material. These weapons tended to maximise mass $m$ and/or surface area $A$, taking advantage of Newton's Second Law ($F = ma$) and the above pressure equation to deliver greater forces. 
+    </p> 
+ 
+    <h3>The Chemical Shift</h3> 
+    <p> 
+      The appearance of the first cannons in Europe around the year 1326 [17] signaled the end of the mechanical age, as warfare moved from storing energy in wood and rope to releasing the chemical potential energy stored in gunpowder, capable of shattering even the strongest round stone towers and tearing through infantry. Read more here to understand the destructive physics behind this new age of chemical warfare. 
+    </p> 
+    <div style="text-align: center; margin: 40px 0;">
+        <img src="siege_orleans.png" alt="The Siege of Orleans" style="max-width: 50%; border-radius: 8px; border: 1px solid #334155;">
+        <p style="margin-top: 10px;">
+            <a href="https://en.wikipedia.org/wiki/File:Siege_orleans.jpg" target="_blank" style="color: #38bdf8; font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid rgba(56,189,248,0.3);">Source: Wikimedia Commons ↗</a>
+        </p>
+    </div>
+  </div> 
+ 
+  <div class="content-block"> 
+    <h2>Conclusion</h2> 
+    <p> 
+      From the destructive use of gravitational potential energy in trebuchet counterweights to the weaponized inertia of close-quarters combat, the medieval period demonstrates the continuous application of classical mechanics to gain battlefield dominance. The transition from stored mechanical energy to chemical propellants marked the end of an era and the birth of modern ballistics. 
+    </p> 
+  </div> 
+ 
+  <div class="content-block"> 
+    <h2>References</h2> 
+    <ul class="ref-list"> 
+      <li><strong>[1, 11, 17]</strong> DeVries, K., & Smith, R. D. (2012). <em>Medieval Military Technology</em>. University of Toronto Press. Chapters of interest: 1 (The Stirrup), 5 (Siege Weapons) and 6 (The Development of Firearms).</li> 
+      <li><strong>[2, 3, 4, 6, 12, 13]</strong> Young, H. D., & Freedman, R. A. (2020). <em>Sears and Zemansky's University Physics</em>. Pearson. Chapters of interest: 8 (Momentum, Impulse and Collisions), 10 (Dynamics of Rotational Motion) and 5 (Applying Newton's Laws)</li> 
+      <li><strong>[7, 9, 16]</strong> Denny, M. (2011). <em>Their Arrows Will Blot Out the Sun: The Mechanics of Archery</em>. Johns Hopkins University Press. Chapters of interest: 3 (Bow Mechanics: Force-Draw Curves) and 6 (Target Impact).</li> 
+      <li><strong>[10, 14]</strong> Hull, L. (2006). <em>Britain's Medieval Castles</em>. Praeger / Gillingham, J. (2004). <em>Richard I</em>. Yale University Press. Sections of interest: Hull, pp. 104 –115 (Undermining and Sapping); Gillingham, pp. 302 – 310 (Engineering of Château Gaillard).</li> 
+      <li><strong>[15]</strong> Williams, A. (2003). <em>The Knight and the Blast Furnace</em>. Brill. Sections of interest: Part III: The Technical Analysis of Armour)</li> 
+      <li><strong>[18]</strong> Hardy, R. (2006). <em>Longbow: A Social and Military History</em>. Sutton Publishing. pp. 210 – 215</li> 
+      <li><strong>[19]</strong> Payne-Gallwey, R. (1903). <em>The Crossbow: Medieval and Modern Military and Sporting</em>. Longmans, Green, and Co. pp. 115 – 120, 145 – 151</li> 
+      <li><strong>[20]</strong> Chevedden, P. E., Eigenbrod, L., Foley, V., & Soedel, W. (1995). "The Trebuchet." <em>Scientific American</em>, 273(1), 66–71.</li> 
+      <li><strong>[21]</strong> Bradbury, J. (1992). <em>The Medieval Siege</em>. Boydell Press.</li> 
+      <li><strong>[22]</strong> Mayor, A. (2003). <em>Greek Fire, Poison Arrows, and Scorpion Bombs: Biological and Chemical Warfare in the Ancient World</em>. Overlook Duckworth.</li> 
+      <li><strong>[23]</strong> Williams, A. (2003). <em>The Knight and the Blast Furnace</em>. Brill.</li> 
+      <li><strong>[24]</strong> Knight, D. (2012). "The Physics of Medieval Archery." <em>Journal of Archaeological Science</em>.</li> 
+      <li><strong>[25]</strong> Bell, F. G. (2007). <em>Engineering Geology</em>. Elsevier. Chapters of interest: 2 (Properties of Rocks and Description of Rock Masses).</li> 
+      <li><strong>[26]</strong> Ashurst, J., & Dimes, F. G. (1998). <em>Conservation of Building and Decorative Stone</em>. Routledge. Chapters of interest: 1 (Igneous Rocks) and 3 (Sandstone).</li> 
+      <li><strong>[27]</strong> Heyman, J. (1995). <em>The Stone Skeleton: Structural Engineering of Masonry Architecture</em>. Cambridge University Press. Chapters of interest: 1 (The Stone Skeleton) and 2 (The Simple Arch).</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Medieval Physics Project. All rights reserved.</p>
+</footer>
+
+</body> 
+</html>
