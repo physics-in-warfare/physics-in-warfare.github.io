@@ -392,7 +392,11 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
   where $I$ is the moment of inertia and $\alpha$ is the angular acceleration of the drone [11].
     </p>
 <p>
-  Some drones also use MEMS gyroscopes (devices that maintain orientation and angular velocity, using the principle of momentum of angular velocity). As the drone rotates, internal vibrating parts of it experience a sideways force (the Coriolis effect) and this force is proportional to the angular velocity. The gyroscope outputs information about its current angular velocity and tilt. This information is processed by a PID (Proportional-Integral-Derivative) controller which compares it with the desired angular velocity and tilt of the drone and calculates by how much the motor speed needs to be altered, so that the drone can restabilize. 
+  Some drones also use MEMS gyroscopes (devices that maintain orientation and angular velocity, using the principle of momentum of angular velocity). As the drone rotates, internal vibrating parts of it experience a sideways force (the Coriolis effect) and this force is proportional to the angular velocity. The gyroscope outputs information about its current angular velocity and tilt. This information is processed by a PID (Proportional-Integral-Derivative) controller which compares it with the desired angular velocity and tilt of the drone and calculates by how much the motor speed needs to be altered, so that the drone can restabilize. The equation for the control output from the PID controller is given by the following equation
+  $$
+  u(t) = K_p (e(t) + \frac{1}{T_i} \int e(t)\, dt + T_d \frac{de(t)}{dt}
+  $$
+  where $K_p$ is the proportional coefficient, $e(t)$ is the error, $T_i$ is integration time constant, and $T_d$ is the derivative time constant. The output given is then used by the drone to adjust its stability.
 </p>
   <p> 
   Another important aspect of drone movement is acceleration. Drones are fitted with accelerometers which rely on Newton's 2nd Law:
@@ -941,6 +945,7 @@ drawLaser();
 
 
 </html> 
+
 
 
 
