@@ -396,20 +396,20 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
   $$
   u(t) = K_p (e(t) + \frac{1}{T_i} \int e(t)\, dt + T_d \frac{de(t)}{dt}
   $$
-  where $K_p$ is the proportional coefficient, $e(t)$ is the error, $T_i$ is integration time constant, and $T_d$ is the derivative time constant. The output given is then used by the drone to adjust its stability.
+  where $K_p$ is the proportional coefficient, $e(t)$ is the error, $T_i$ is integration time constant, and $T_d$ is the derivative time constant [12]. The output given is then used by the drone to adjust its stability.
 </p>
   <p> 
   Another important aspect of drone movement is acceleration. Drones are fitted with accelerometers which rely on Newton's 2nd Law:
     $$
     F = ma
     $$
-    where $m$ is the mass of the drone and $a$ is its acceleration [12].
+    where $m$ is the mass of the drone and $a$ is its acceleration [13].
     <br>
     This equation is used to calculate linear acceleration in the x,y,z planes. The accelerometer contains a small mass which is suspended by springs. This mass lags behind when the drone accelerates and the accelerometer casing moves with it. This compresses or stretches a spring (depending on direction) and a restoring force develops in the spring. The displacement of the spring is measured. This information is also processed by a PID controller which tells it how to correct any undesired changes in speed or direction. Some drones use MEMS accelerometers instead, where there is no spring, rather the mass forms part of a capacitor. As it moves the distance between the plates of the capacitor changes, causing the capacitance to change according to 
     $$
     C = \frac{\epsilon A}{d}
     $$
-    where $\epsilon$ is the dielectric permittivity, $A$ is the area of the plates, and $d$ is the distance between the plates [13]. This generates an electrical signal which is then processed by the PID controller. 
+    where $\epsilon$ is the dielectric permittivity, $A$ is the area of the plates, and $d$ is the distance between the plates [14]. This generates an electrical signal which is then processed by the PID controller. 
   </p>
     <h3>Sensors and Target Detection</h3>
     <p>
@@ -420,7 +420,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     n_1 sin\theta_1 = n_2 sin\theta_2
     $$
-    where $n_1$ and $n_2$ are the refractive indices of the initial and final media respectively, and $\theta_1$ and $\theta_2$ are the angles of incidence and refraction respectively [14].
+    where $n_1$ and $n_2$ are the refractive indices of the initial and final media respectively, and $\theta_1$ and $\theta_2$ are the angles of incidence and refraction respectively [15].
  <br>
     This, now focussed, image is detected by a sensor which uses the photoelectric effect to emit electrons and the intensity of the electrons is governed by the intensity of the light. More electrons generate a stronger signal, which can be used to determine how close an object is. However, optical cameras do have limited use due to poor performance in darkness, smoke or dust. So they are not often sufficient alone for combat. 
   </p>
@@ -429,7 +429,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     P = \sigma A T^4
     $$
-    where $\sigma$ is the Steffan-Boltzmann constant, $A$ is the area, and $T$ is the temperature [15].
+    where $\sigma$ is the Steffan-Boltzmann constant, $A$ is the area, and $T$ is the temperature [16].
     <br>
     Hotter objects emit more radiation. The imaging cameras detect the radiation and focus it onto a sensor array, which converts the information into an electrical signal which can be interpreted as a colourful image, with different colours showing different temperatures. Therefore, thermal imaging sensors are very useful in warfare because they can detect anything that emits heat, including humans, vehicles that are running, and weapons that have recently been or are being fired. They can be detected even at night and in poor visibility. However, thermal imaging does have limitations, including lower heat contrasts in hotter settings, decreased effectiveness in heavy rain, or if objects are thermally shielded (temperature minimized through heat transfer by insulation or reflection). 
   </p>
@@ -438,7 +438,7 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
     $$
     f_0 = f_s \frac{v \pm v_0}{v \mp v_s}
     $$
-    where $f_s$ is the source frequency, $v$ is the sound wave velocity, $v_0$ is the observer velocity, and $v_s$ is the source velocity [16].
+    where $f_s$ is the source frequency, $v$ is the sound wave velocity, $v_0$ is the observer velocity, and $v_s$ is the source velocity [17].
     <br>
     This is useful in a military setting because it works in all weather conditions and light conditions and is really good for measuring the distance of objects that are far away. Radar's limitations included high power usage and ineffectiveness against stealth technology - vehicles and weapons can be designed using certain shapes and angles that deflect the waves in the wrong direction, or they are coated with materials that absorb the waves rather than reflect them. 
 
@@ -458,21 +458,21 @@ One key movement that a drone must control is its rotation. Drones can rotate ab
   $$
     E(t) = [A + m(t)]sin(2 \pi f t)
     $$
-    where $t$ is the time, $A$ is the amplitude, $m$ is the information signal, and $f$ is the frequency [17].
+    where $t$ is the time, $A$ is the amplitude, $m$ is the information signal, and $f$ is the frequency [18].
   </p>
   <p>
     Frequency Modulation (FM): Only frequency is varied (around a central value) - this changes the phase indirectly, but all else is kept constant. Information is encoded as small shifts in the frequency. FM is far more reliable in a military setting than AM as it is not affected much by noise. It is mostly used for radio control and voice messages. The frequency shift is what encodes the information. The electric field for FM is given by
 $$
     E(t) = Asin(2 \pi [f + \Delta f(t)]t)
     $$
-    where $\Delta f(t)$ is the frequenct shift [17].
+    where $\Delta f(t)$ is the frequenct shift [18].
   </p>
    <p>
      Phase Modulation (PM): Amplitude and frequency stay constant, while phase is shifted either forwards or backwards. The instantaneous amplitude of the base signal modifies the phase of the carrier signal keeping amplitude and frequency constant. This delivers the message in phase shifts. PM is good because it is resistant  to noise and is very efficient. It is mostly used for digital messages and encrypted links. The phase shift is what encodes the information. The electric field for this is given by
      $$
      E(t) = Asin(2 \pi ft + \phi (t))
      $$
-     where $\phi (t)$ is the phase shift [17].
+     where $\phi (t)$ is the phase shift [18].
    </p>
   <p>
     There are numerous downsides to RF communication, however.  These include
@@ -482,14 +482,14 @@ $$
     $$
     d \approx \sqrt{2Rh}
     $$
-    where $R$ is the radius of the Earth and $h$ is the height of the drone [18].
+    where $R$ is the radius of the Earth and $h$ is the height of the drone [19].
   </p>
   <p>
     Loss of signal strength: Radio waves spread out according to the inverse square law as they travel. This means that increasing distance greatly decreases power, making long-range drone control difficult. This power loss is described by
     $$
     P \propto \frac{1}{r^2}
     $$
-    where $r$ is the distance from the signal transmitter [19].
+    where $r$ is the distance from the signal transmitter [20].
   </p>
   <p>
     Interference: When multiple signals overlap, they superpose which can distort the signal, or completely eliminate it (destructive interference). 
@@ -508,9 +508,9 @@ $$
   <div class="content-block">
     <h2>Directed Energy Weapons</h2>
     <p>
-      Directed energy weapons (DEWs) are ones that damage their target using a source of highly concentrated energy, rather than any solid projectiles. The main types include Lasers, microwaves and particle beams. Lasers are the most widely used DEW and were invented in 1960 and first used for combat purposes in the Vietnam and Falklands wars during the 1970s and 1980s [20][21]. They were used for targeting and guiding bombs. Microwave DEWs began being used in the Iraq War in the early 2000s as electronic weapons, disabling systems [22]. They have since been used in counter-drone operations in the 2020s – the UK MoD used them between 2024 and 2025 for this purpose [23]. 
+      Directed energy weapons (DEWs) are ones that damage their target using a source of highly concentrated energy, rather than any solid projectiles. The main types include Lasers, microwaves and particle beams. Lasers are the most widely used DEW and were invented in 1960 and first used for combat purposes in the Vietnam and Falklands wars during the 1970s and 1980s [21][22]. They were used for targeting and guiding bombs. Microwave DEWs began being used in the Iraq War in the early 2000s as electronic weapons, disabling systems [23]. They have since been used in counter-drone operations in the 2020s – the UK MoD used them between 2024 and 2025 for this purpose [24]. 
     </p>
-<img src="laser_image3.JPG" width="600"> [24]
+<img src="laser_image3.JPG" width="600"> [25]
   </div>
       <div class="content-block">
     <h3>Lasers (Light Amplification by Stimulated Emission of Radiation)</h3>
@@ -519,7 +519,7 @@ $$
    $$
       E = E_2 - E_1 = hf
       $$
-      where $E_2$ is the final energy, $E_1$ is the initial energy, $h$ is Planck's constant, and $f$ is the frequency [25].
+      where $E_2$ is the final energy, $E_1$ is the initial energy, $h$ is Planck's constant, and $f$ is the frequency [26].
     </p>
 <p>
 The process of adding energy to an atom when making a laser is called pumping. There are three main methods of pumping: 
@@ -559,7 +559,7 @@ The next part is stimulated emission, where the emitted photons with energy $hf$
           $$
           \theta = \frac{\lambda}{\pi \omega_0}
           $$
-          where $\lambda$ is the wavelength and $\omega_0$ is the initial beam radius [26].
+          where $\lambda$ is the wavelength and $\omega_0$ is the initial beam radius [27].
           <br>
           Line of sight restrictions are where lasers cannot go through walls or over hills, so they are limited to direct scenarios. 
         </p>
@@ -601,9 +601,9 @@ Divergence angle θ = <span id="thetaValue">0</span> rad
   <div class="content-block">
     <h2>Cyber Warfare</h2>
     <p>
-      Cyber warfare involves using computer and electronic technology to attack information systems and disrupt or destroy the activities of another nation or organization, used when there is war or tension between two groups. This type of warfare was used to attack Iran's nuclear weapons in 2010, as well as in the Russo-Georgian war to disrupt control, and in the Russo-Ukraine war to attack the power grid [27][28][29]. Also, information warfare has been used by the People's Republic of China in order to control the nation through propaganda and media control, as well as to influence U.S. elections and decisions between Russia and Ukraine [30]. The types of cyber attacks fall into several main categories. 
+      Cyber warfare involves using computer and electronic technology to attack information systems and disrupt or destroy the activities of another nation or organization, used when there is war or tension between two groups. This type of warfare was used to attack Iran's nuclear weapons in 2010, as well as in the Russo-Georgian war to disrupt control, and in the Russo-Ukraine war to attack the power grid [28][29][30]. Also, information warfare has been used by the People's Republic of China in order to control the nation through propaganda and media control, as well as to influence U.S. elections and decisions between Russia and Ukraine [31]. The types of cyber attacks fall into several main categories. 
   <br>
-      <img src="cyber2.avif" width="600"> [31]
+      <img src="cyber2.avif" width="600"> [32]
     </p>
     
   </div>
@@ -623,7 +623,7 @@ Divergence angle θ = <span id="thetaValue">0</span> rad
     $$
     A \propto \frac{1}{f - f_0}
     $$
-    where $f$ is the driven frequency and $f_0$ is the natural frequency [32]. So as driven the frequency gets close to the natural frequency, the amplitude becomes large and this can cause part of the system to break or fail. 
+    where $f$ is the driven frequency and $f_0$ is the natural frequency [33]. So as driven the frequency gets close to the natural frequency, the amplitude becomes large and this can cause part of the system to break or fail. 
 
      <h3>Denial of Service (DoS) Attacks</h3>
     A DoS attack involves overloading a server with requests, causing it to shut down or crash, preventing valid use by the organisation, for example, the government or military. 
@@ -632,7 +632,7 @@ Divergence angle θ = <span id="thetaValue">0</span> rad
     $$
     C = Blog_2(1 + SNR)
     $$
-    where $B$ is the bandwidth and $SNR$ is the signal to noise ratio [33]. This means that there is a maximum amount of data that can be processed in a set time. Processing a high amount of unwanted requests consumes a high amount of energy, which produces heat, leading to shutdown. 
+    where $B$ is the bandwidth and $SNR$ is the signal to noise ratio [34]. This means that there is a maximum amount of data that can be processed in a set time. Processing a high amount of unwanted requests consumes a high amount of energy, which produces heat, leading to shutdown. 
 
     <h3>Electrical Power Grid Attacks</h3>
     These attacks target power stations and control system networks, which disrupts the generation and distribution of electricity by damaging equipment and disabling critical systems. There are multiple outcomes following an electrical power grid attack.
@@ -641,7 +641,7 @@ Divergence angle θ = <span id="thetaValue">0</span> rad
     $$
     f = \frac{\omega}{2 \pi}
     $$
-    where $\omega$ is the angular speed [19]. If demand exceeds the safe operating capacity of the generator, then the turbines slow, causing the frequency to drop. This can cause stress or excessive heating. 
+    where $\omega$ is the angular speed [20]. If demand exceeds the safe operating capacity of the generator, then the turbines slow, causing the frequency to drop. This can cause stress or excessive heating. 
     <br>
     Generator Desynchronisation: If two generators that make up the grid fall out of phase, this creates a short circuit between the two voltage sources, leading to a high current flowing which could destroy the system. 
     <br>
@@ -715,126 +715,128 @@ Attacks on the electrical grid could cause major problems in society, including 
 
 <br> 
 
- 
+ [12] Astrom, K., T. Hagglund. PID Controllers. 2nd Edition (1995).
 
-[12] NASA Glenn Research Center. Newton's Laws of Motion, https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/ (Accessed 6 February 2026). 
-
-<br> 
-
- 
-
-[13] Bureau of Naval Personnel (1965) Fundamentals of electronics, volume 1b: Basic electricity, alternating current (NAVPERS 93400A-1b) (1965, p. 201). 
+<br>
+      
+[13] NASA Glenn Research Center. Newton's Laws of Motion, https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/ (Accessed 6 February 2026). 
 
 <br> 
 
  
 
-[14] Born and Wolf. Principles of Optics. New York: Pergamon Press INC. (1959, p. 37). 
+[14] Bureau of Naval Personnel (1965) Fundamentals of electronics, volume 1b: Basic electricity, alternating current (NAVPERS 93400A-1b) (1965, p. 201). 
 
 <br> 
 
  
 
-[15] Stefan, J. Über die Beziehung zwischen der Wärmestrahlung und der Temperatur [On the relationship between thermal radiation and temperature]. Sitzungsberichte der Kaiserlichen Akademie der Wissenschaften in Wien, 79 (1879, p. 391–428). 
-
-<br> 
-      [16] Rayleigh, J.W.S. The theory of sound. London: Macmillan (1877). 
+[15] Born and Wolf. Principles of Optics. New York: Pergamon Press INC. (1959, p. 37). 
 
 <br> 
 
  
 
-[17] Haykin, S. Communication systems. 4th edition. New York: John Wiley & Sons (2001). 
+[16] Stefan, J. Über die Beziehung zwischen der Wärmestrahlung und der Temperatur [On the relationship between thermal radiation and temperature]. Sitzungsberichte der Kaiserlichen Akademie der Wissenschaften in Wien, 79 (1879, p. 391–428). 
+
+<br> 
+      [17] Rayleigh, J.W.S. The theory of sound. London: Macmillan (1877). 
 
 <br> 
 
  
 
-[18] NASA Glenn Research Center. Distance to the Horizon, https://pwg.gsfc.nasa.gov/stargaze/Shorizon.htm (Accessed 10 February 2026). 
+[18] Haykin, S. Communication systems. 4th edition. New York: John Wiley & Sons (2001). 
 
 <br> 
 
  
 
-[19] Young, H.D. and Freedman, R.A. University physics with modern physics. 14th edn. Harlow: Pearson (2016). 
+[19] NASA Glenn Research Center. Distance to the Horizon, https://pwg.gsfc.nasa.gov/stargaze/Shorizon.htm (Accessed 10 February 2026). 
 
 <br> 
 
  
 
-[20] Maiman, T. H. Stimulated optical radiation in ruby. Nature. 187 (1960). 
+[20] Young, H.D. and Freedman, R.A. University physics with modern physics. 14th edn. Harlow: Pearson (2016). 
 
 <br> 
 
  
 
-[21] Tirpak, J. A. Military Lasers High and Low. Air & Space Forces Magazine (1999) https://www.airandspaceforces.com/article/0999lasers/ (Accessed 10 February 2026). 
+[21] Maiman, T. H. Stimulated optical radiation in ruby. Nature. 187 (1960). 
 
 <br> 
 
  
 
-[22] Meyers, B. E. Lasers used on Iraqi drivers who won't stop. NBC News (2006) https://www.nbcnews.com/id/wbna12854973 (Accessed 10 February 2026). 
+[22] Tirpak, J. A. Military Lasers High and Low. Air & Space Forces Magazine (1999) https://www.airandspaceforces.com/article/0999lasers/ (Accessed 10 February 2026). 
 
 <br> 
 
  
 
-[23] UK Government. British Army successfully tests new drone-destroying laser (2024) https://www.gov.uk/government/news/british-army-successfully-tests-new-drone-destroying-laser (Accessed 10 February 2024). 
-
-<br> 
-      [24] Popular Mechanics. High-Powered Lasers Were Supposed to Protect the Navy Against Chinese Missiles – And Just Hit a Major Snag. 29 August 2024. Image courtesy of J. F. Williams https://www.popularmechanics.com/military/a61898465/navy-laser-weapons/ (Accessed 19 February 2016). 
+[23] Meyers, B. E. Lasers used on Iraqi drivers who won't stop. NBC News (2006) https://www.nbcnews.com/id/wbna12854973 (Accessed 10 February 2026). 
 
 <br> 
 
  
 
-[25] Planck, M. Über das Gesetz der Energieverteilung im Normalspectrum. Annalen der Physik, 4(3), (1901, p. 553–563). 
+[24] UK Government. British Army successfully tests new drone-destroying laser (2024) https://www.gov.uk/government/news/british-army-successfully-tests-new-drone-destroying-laser (Accessed 10 February 2024). 
+
+<br> 
+      [25] Popular Mechanics. High-Powered Lasers Were Supposed to Protect the Navy Against Chinese Missiles – And Just Hit a Major Snag. 29 August 2024. Image courtesy of J. F. Williams https://www.popularmechanics.com/military/a61898465/navy-laser-weapons/ (Accessed 19 February 2016). 
 
 <br> 
 
  
 
-[26] Kogelnik, H. and Li, T. Laser beams and resonators, Applied Optics, 5(10), (1966, p. 1550–1567). 
+[26] Planck, M. Über das Gesetz der Energieverteilung im Normalspectrum. Annalen der Physik, 4(3), (1901, p. 553–563). 
 
 <br> 
 
  
 
-[27] Nakashima, E., Warrick, J. Stuxnet was the work of US and Israeli experts, officials say. The Washington Post (2012) https://www.washingtonpost.com/world/national-security/stuxnet-was-work-of-us-and-israeli-experts-officials-say/2012/06/01/gJQAlnEy6U_story.html (Accessed 11 February 2026). 
+[27] Kogelnik, H. and Li, T. Laser beams and resonators, Applied Optics, 5(10), (1966, p. 1550–1567). 
 
 <br> 
 
  
 
-[28] Danchev, D. Georgia President's web site under DDoS attack from Russian hackers, ZDNET (2008) https://www.zdnet.com/article/georgia-presidents-web-site-under-ddos-attack-from-russian-hackers/ (Accessed 11 February 2026). 
-
-<br> 
-      [29] Kirby, P., Gozzi, L. Ukraine imposes blackouts in most regions after Russian power grid attacks, BBC News (2025) https://www.bbc.co.uk/news/articles/c15p32dvy0vo (Accessed 11 February 2026). 
+[28] Nakashima, E., Warrick, J. Stuxnet was the work of US and Israeli experts, officials say. The Washington Post (2012) https://www.washingtonpost.com/world/national-security/stuxnet-was-work-of-us-and-israeli-experts-officials-say/2012/06/01/gJQAlnEy6U_story.html (Accessed 11 February 2026). 
 
 <br> 
 
  
 
-[30] KLepper, D. China-linked 'Spamouflage' network mimics Americans online to sway US political debate, APNews (2024) https://apnews.com/article/china-disinformation-network-foreign-influence-us-election-a2b396518bafd8e36635a3796c8271d7 (Accessed 20 February 2026). 
+[29] Danchev, D. Georgia President's web site under DDoS attack from Russian hackers, ZDNET (2008) https://www.zdnet.com/article/georgia-presidents-web-site-under-ddos-attack-from-russian-hackers/ (Accessed 11 February 2026). 
+
+<br> 
+      [30] Kirby, P., Gozzi, L. Ukraine imposes blackouts in most regions after Russian power grid attacks, BBC News (2025) https://www.bbc.co.uk/news/articles/c15p32dvy0vo (Accessed 11 February 2026). 
 
 <br> 
 
  
 
-[31] Tunnicliffe, A. International Collaboration on cyber warfare: an essential plan, but is it realistic? Army Technology (2019) https://www.army-technology.com/features/paris-call-cyberspace-realistic/ (Accessed 20 February 2026). 
+[31] KLepper, D. China-linked 'Spamouflage' network mimics Americans online to sway US political debate, APNews (2024) https://apnews.com/article/china-disinformation-network-foreign-influence-us-election-a2b396518bafd8e36635a3796c8271d7 (Accessed 20 February 2026). 
 
 <br> 
 
  
 
-[32] French, A.P. Vibrations and waves. New York: Norton (1971). 
+[32] Tunnicliffe, A. International Collaboration on cyber warfare: an essential plan, but is it realistic? Army Technology (2019) https://www.army-technology.com/features/paris-call-cyberspace-realistic/ (Accessed 20 February 2026). 
 
 <br> 
 
  
 
-[33] Shannon, C.E. A mathematical theory of communication, Bell System Technical Journal, 27(3), (1948, p. 379–423). 
+[33] French, A.P. Vibrations and waves. New York: Norton (1971). 
+
+<br> 
+
+ 
+
+[34] Shannon, C.E. A mathematical theory of communication, Bell System Technical Journal, 27(3), (1948, p. 379–423). 
     
     </ol>
   </div>
@@ -945,6 +947,7 @@ drawLaser();
 
 
 </html> 
+
 
 
 
